@@ -14,3 +14,6 @@ swift study notes:
 
 ### [Markdown](https://guides.github.com/features/mastering-markdown/)
 ### Xcode Tips
+
+
+### as! and as?
