@@ -1,1 +1,3 @@
 # SwiftNotes
+
+CoreData
