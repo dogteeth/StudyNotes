@@ -1,4 +1,4 @@
-Swift Study Notes
+swift study notes:
 
 ### CoreData
 ### UITableView
