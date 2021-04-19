@@ -8,7 +8,7 @@ go
 http://github.com - automatic!
 
 
-[google](google.com)
+[try this](https://github.com/dogteeth/SwiftNotes/blob/main/test.swift)
 
 
 123
