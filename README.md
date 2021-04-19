@@ -1,16 +1,6 @@
-# 第一階
-## 第二階
-### 第三階
+### CoreData
+### UITableView
+### UITextField
+### UISearchField
 
-go
-
-## CoreData
-
-
-http://github.com - automatic!
-
-
-[try this](https://github.com/dogteeth/SwiftNotes/blob/main/test.swift)
-
-
-123
+### [Markdown](https://guides.github.com/features/mastering-markdown/)
