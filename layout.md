@@ -30,9 +30,29 @@
 leading and trailing, 也可是 left and right. 但leading 和 trailing可以依照不同文化習慣改變，譬如由右到左的書寫，leading就是從右開始。
 
 
+**Attributes Categories**
+* Horizontal: left, right, leading, trailing, center-x
+* Vertical: top, bottom, center-y
+* Size: height and width
+
+**Anatomy of a constraint**
+* Participants: the one or two participants attributes.
+* Inequalities: the type of relationships between participants.
+* Modification: some sort of optionally applied defined changes.
+
+
+
 #### 不懂
 
 1. Interface Builder Document
 有兩個選項：
 Use Auto Layout，
 Use Size Classese 《- 這個會變成 自由型式的畫面 freeform canvas.
+
+
+
+##### Tips
+
+**Layout Refresh**
+Editor > Resolve Auto Layout Issues > Update Frames(有兩個，依狀況選擇）
+
