@@ -4,6 +4,8 @@ swift study notes:
 ### UITableView
 ### UITextField
 ### UISearchField
+[search bar, dismiss keyboard by touch screen](https://github.com/dogteeth/SwiftNotes/blob/main/searbarDismissKeyboard.md)
+
 ### UIAlertController
 ### UIAlertAction
 ### NSPredicate
