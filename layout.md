@@ -20,6 +20,7 @@
 
 #### 4.
 [Cheating Sheet](https://www.hackingwithswift.com/articles/140/the-auto-layout-cheat-sheet)
+auto layout programmatically.
 
 #### 5.
 [Basic Tutorial](https://www.raywenderlich.com/1343912-adaptive-layout-tutorial-in-ios-12-getting-started)
@@ -54,5 +55,6 @@ Use Size Classese 《- 這個會變成 自由型式的畫面 freeform canvas.
 ##### Tips
 
 **Layout Refresh**
+
 Editor > Resolve Auto Layout Issues > Update Frames(有兩個，依狀況選擇）
 
