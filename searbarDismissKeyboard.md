@@ -1,4 +1,4 @@
-dissmiss keyboard when tap outside the searchbar
+dismiss keyboard when tap outside the searchbar
 from [here:](https://www.codegrepper.com/code-examples/swift/dismiss+keyboard+when+tap+outside+swift)
 
 
