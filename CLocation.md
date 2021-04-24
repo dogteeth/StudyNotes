@@ -1,3 +1,15 @@
+關於地圖的一些知識：
+
+[資料來源](https://codertw.com/ios/17724/)
+在MKMapView上新增標註可以方便使用者更好地獲取資訊，與地圖進行互動。
+標註分為兩種，一種是Annotations，一種是Overlays。
+Annotations。標註由經緯度所確定的一個點，比如使用者當前位置，一個被指定的地址，或者一個被收藏的地點。
+Overlays。標註由多點連成的線，一個或者多個相鄰或不相鄰的區域。比如路線、交通狀況、或者某個地點的邊界。
+和MKMapView中的subView不同，Annotations和Overlays會隨著地圖的移動而移動。
+
+
+
+
 取得定位資料
 1. import MapKit
 2. 做CLlocationManager的object，設定值。
@@ -57,5 +69,108 @@ func checkLocationAuthorization() {
 ```
 
 
+一次性的取得User的座標
+```Swift
+
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+  guard let userLocation = location.last else { return }
+  
+  manager.stopUpdatingLocation()
+  usersLastLocation = userLocation
+  
+  print(userLocation.coordinate.latitude)
+  print(userLocation.coordinate.longitude)
+
+}
+
+```
+
+取得路線圖
+
+```Swift
+
+func getCoordinatesForLocationsText() {
+  
+  //Clear old pins and route first
+  let annotations = self.mapView.annotations
+  mapview.removeAnnotaions(annotations)
+  let overlays = mapView.overlays
+  mapView.removeOverlays(overlays)
+  
+  
+  //user輸入text
+  
+  guard let startAddress = startTextField.text
+    !startAddress.isEmpty else {
+      print("no start address text, error")
+      return
+    }
+    
+  guard let endAddress = endTextField.text
+    !endAddress.isEmpty else {
+      print("no end address text, error")
+      return
+    }
+    
+  
+  var startPin: CustomPin?
+  var endPin: CustomPin?
+
+  //Get coordinates for the first location
+  
+  CLGeocoder().geocodeAddressString(startAddress) { (placemarks, error) in
+    if error != nil {
+      print("CLGeocoder error")
+      return
+    }
+    
+    //回傳的placemarks是一個array, 因為符合地址的座標，可能一個也可能是多個。
+    if let placemark = placemarks?[0] {
+      
+      //把取得的座標，轉成字串，做使用。
+      let startLatitudeString = String(format: "%.04f", placemark.location?.coordinate.latitude ?? 0.0)
+      let startLongitudeString = String(format: "%.04f", placemark.location?.coordinate.longtitude ?? 0.0)
+
+      print( /* 說明文字   */  ）
+      
+      let startLatitude = placemark.location?.coordinate.latitude ?? 0.0
+      let starLongititude = placemark.location?.coordinate.longitude ?? 0.0
+      let coordinate = CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+      
+      let pin =  CustomPin(pintTitle: startAddress, pinSubTitle: startAddress, location: coordinate)
+      startPin = pin
+      
+      
+      // 
+
+    } 
+  }
+}
+
+```
+
+```Swift
+
+import Foundation
+import MapKit
+
+class CustomPin: NSObject, MKAnnotation {
+
+  var coordinate : CLLocationCoordinate2D
+  var title: String?
+  var subtitle: String?
+  
+  init(pinTitle: String, pinSubTitle: String, location: CLLocationCoordinate2D) {
+    self.title = pinTitle
+    self.subtitle = pinSubTitle
+    self.coordinate = location
+  }
+}
+
+
+}
+
+
+```
 
 
