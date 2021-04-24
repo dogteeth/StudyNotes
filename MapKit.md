@@ -1,4 +1,4 @@
-重點作業如下：
+加入地圖的方式：
 1. import MapKit
 2. 從library拉地圖的元件到view裹
 3. 替元件做一個IBOutlet.
@@ -26,4 +26,3 @@ func markMap(longitude long:Double, latitude lat:Double){
 
 
 ```
-
