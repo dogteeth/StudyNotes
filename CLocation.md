@@ -52,8 +52,8 @@ func checkLocationAuthorization() {
     ///
   default:
     break
-
-
+  }
+}
 ```
 
 
