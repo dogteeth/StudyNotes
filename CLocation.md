@@ -170,4 +170,12 @@ class CustomPin: NSObject, MKAnnotation {
 ```
 
 
+自訂地圖羅盤：
+showCompass
 
+
+
+
+其它功能：
+showTraffic
+showScale
