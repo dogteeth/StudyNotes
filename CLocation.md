@@ -1,14 +1,7 @@
-關於地圖的一些知識：
-
-[資料來源](https://codertw.com/ios/17724/)
-在MKMapView上新增標註可以方便使用者更好地獲取資訊，與地圖進行互動。
-標註分為兩種，一種是Annotations，一種是Overlays。
-Annotations。標註由經緯度所確定的一個點，比如使用者當前位置，一個被指定的地址，或者一個被收藏的地點。
-Overlays。標註由多點連成的線，一個或者多個相鄰或不相鄰的區域。比如路線、交通狀況、或者某個地點的邊界。
-和MKMapView中的subView不同，Annotations和Overlays會隨著地圖的移動而移動。
 
 
-
+#### 取得user所在，與目標地址，製作路線圖。
+[資料來源](https://www.youtube.com/watch?v=UOEx8sb3HeY&list=PLFLnrHt5OblebeFVd6CFapMjkYWQVeumc&index=5)
 
 取得定位資料
 1. import MapKit
@@ -170,10 +163,35 @@ class CustomPin: NSObject, MKAnnotation {
 ```
 
 
+#### 雜記
+
+***
+[資料來源](https://codertw.com/ios/17724/)
+在MKMapView上新增標註可以方便使用者更好地獲取資訊，與地圖進行互動。
+標註分為兩種，一種是Annotations，一種是Overlays。
+Annotations。標註由經緯度所確定的一個點，比如使用者當前位置，一個被指定的地址，或者一個被收藏的地點。
+Overlays。標註由多點連成的線，一個或者多個相鄰或不相鄰的區域。比如路線、交通狀況、或者某個地點的邊界。
+和MKMapView中的subView不同，Annotations和Overlays會隨著地圖的移動而移動。
+
+***
 自訂地圖羅盤：
-showCompass
+showCompass = true
+由於，地圖本身有個預設地圖，移動地圖方向就會出現，所以要把它false，自己再做一個。
 
 
+```Swift
+ let compassButton = MKCompassButton(mapView: mapView)
+        compassButton.compassVisibility = .visible
+        
+        /* 
+         *  設定compass的位置，CGPoint(x, y)
+         * self.view.bounds.width --> 營幕的寛度。
+         */
+        compassButton.frame.origin = CGPoint(x: self.view.bounds.width - 50, y: 20)
+        //mapView是自定的var 
+        mapView.addSubview(compassButton)
+
+```
 
 
 其它功能：
