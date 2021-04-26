@@ -6,9 +6,7 @@
 取得定位資料
 1. import MapKit
 2. 做CLlocationManager的object，設定值。
-3. 需要在plist上取得用戶同意，取得用戶定位資料。
-
-
+3. 需要在plist上取得用戶同意，取得用戶定位資料。 Privacy-Location when in use
 
 ```Swift
 
