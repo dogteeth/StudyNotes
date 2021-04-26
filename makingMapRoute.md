@@ -3,10 +3,16 @@
 #### 取得user所在，與目標地址，製作路線圖。
 [資料來源](https://www.youtube.com/watch?v=UOEx8sb3HeY&list=PLFLnrHt5OblebeFVd6CFapMjkYWQVeumc&index=5)
 
-取得定位資料
+製作方式：
 1. import MapKit
 2. 做CLlocationManager的object，設定值。
-3. 需要在plist上取得用戶同意，取得用戶定位資料。 Privacy-Location when in use
+3. 需要在plist上取得用戶同意，取得用戶定位資料。 
+
+注意事項：
+1. Privacy-Location when in use。用戶的狀態有三種，Authorized, Denied, Restricted. Denied的狀態時，可以再次提醒用戶，需要同意才能進行。若是Restricted, 則無需再詢問，因為這是該用戶的當下設定己被限制，譬如企業內的用戶等。
+2. Generally it's a good idea to add all your annotations up-front. Annotations are light weight, but annotation views are not. MKMapView reuses annotation views similar to how UITableView reuses cells.
+
+
 
 ```Swift
 
