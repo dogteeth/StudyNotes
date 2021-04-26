@@ -24,3 +24,5 @@ swift study notes:
 
 ### [layout](https://github.com/dogteeth/SwiftNotes/blob/main/layout.md)
 ### as! and as?
+
+### Dictionary
