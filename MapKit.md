@@ -1,8 +1,31 @@
 加入地圖的方式：
-1. import MapKit
+1. import MapKit, CoreLocation
 2. 從library拉地圖的元件到view裹
-3. 替元件做一個IBOutlet.
+3. 替元件做一個IBOutlet, ex mapView
 4. 製作function：輸入座標後，就可以在地圖上表示地點。
+
+授權
+- 取得CLLocationManager()的 instance
+- 以instance呼叫授權。
+
+地圖標示
+- 取得MKPointAnnotation()的 instance
+- 以instance，取得coordinate的method,即可將instace定位在特定的座標
+- 以addAnnotation這個method, 把MKPointAnnotation的 instance加入 map.即完成。
+
+
+```Swift
+let locationManager  = CLLocationManager()
+locationManager.requestWhenInUseAuthorization()
+
+let pin = MKPointAnnotation()
+pin.coordinate = CLLocationCoordinate2D(latitude: XXXXX, longitude: XXXXX)
+pin.title = "XXXX"
+mapView.addAnnotation(pin)
+
+mapView.setCenter(pin.coordinate, animated: false)
+
+```
 
 
 
