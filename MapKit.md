@@ -27,6 +27,8 @@ mapView.setCenter(pin.coordinate, animated: false)
 
 ```
 
+做成function，如這個例子，傳入座標，即可出現在地圖上。。
+
 
 
 ```Swift
