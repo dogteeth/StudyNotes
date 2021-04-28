@@ -36,13 +36,34 @@ func sayHello(to name: String, finallySayIt: (String) -> Void) {
 ```
 
 closure本身也可以是 function回傳的變數。
-以下這個sayIt function, 呼叫時，不需要任何變數，它會回傳一個closure: (String)->()。而這個closure，接受一個String之後，做處理（做什麼處理呢？在這個時候，我們不知道，它開放給呼叫 sayIt 這個function的同時，才做設定。
+以下這個sayIt function, 呼叫時，不需要任何變數，它會回傳一個closure: (String)->()。而這個closure，接受一個String之後，做處理。
 
-notes: 媽的。為什麼要這麼多工。不能這個時候就先設好。
 ```swift
-func sayIt() -> (String)->()
+func sayIt() -> (String)-> Void {
+  return { (nama) in
+   print("Hello \(name)")
+  }
+}
+```
+
+呼叫這個function時，要用這個方式
+
+```swift
+
+//這不會work
+sayIt()
+
+//這可以。
+sayIt()("Paul")
+
+//或是這樣也可以
+
+let greetings = sayIt()
+greeting("Paul")
+
 
 ```
+
 
 
 
