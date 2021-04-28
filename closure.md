@@ -40,7 +40,7 @@ closure本身也可以是 function回傳的變數。
 
 ```swift
 func sayIt() -> (String)-> Void {
-  return { (nama) in
+  return { (name) in
    print("Hello \(name)")
   }
 }
@@ -63,6 +63,9 @@ greeting("Paul")
 
 
 ```
+
+
+closure是referance type.
 
 
 
