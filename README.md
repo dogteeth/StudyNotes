@@ -12,13 +12,22 @@ notes:
 
 ### topics to study:
 CoreData
+
 UITableView
+
 UITextField
+
 UIAlertController
+
 UIAlertAction
+
 NSPredicate
+
 NSFetchResultsController
+
 NSFetchRequest
+
 Xcode Tips
+
 as! and as?
 
