@@ -14,3 +14,14 @@ Swift定義：
 Instance methods, as described above, are methods that you call on an instance of a particular type. You can also define methods that are called on the type itself. These kinds of methods are called type methods. You indicate type methods by writing the static keyword before the method’s func keyword. 
 ***
 
+
+```swift
+
+class SingletonClass {
+    static let shared = SingletonClass() 
+    private init() { }
+    func someMethod() { }
+    let constantProperty = ""
+    var variableProperty = ""
+}
+```
