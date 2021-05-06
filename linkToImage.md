@@ -1,4 +1,8 @@
-
+#### 中文URL的處理
+- url的連結中有全形中文或全形空格，需先進行轉碼。
+- 轉碼運用到的method需要用到String的extesion。
+- .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+- 例子如下：
 
 ```swift
 import UIKit
