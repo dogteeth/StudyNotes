@@ -13,9 +13,13 @@
       * categories：回傳頁面的分類
       * images：回傳頁面上的附加圖片檔
       * 更多的設定，參考文件說明
-      *prop：回傳頁面哪些attributes, 如：
-    
-  * 
+    * list：指名抓取特定 list 結果
+  * action=parse：把內容傳入以得到想要的結果，比方說利用指定 titles 、pageId、page 的方法抓取頁面然後加上 prop=wikitext 來把內容改成wikitext 的格式。
+  * action=opensearch：可以獲得特定關鍵字的簡短介紹，加上以下參數
+    * namespace：頁面的種類，預設是 0，也就是主條目
+    * （必選）搜尋關鍵字
+    * format：預設是 json
+    * limit：回傳結果數量  
 - format
   * format回傳的資料有多種json, xml, php, jsonfm.
   * 預設是jsonfm（此格式是網頁型態）
