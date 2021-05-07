@@ -44,3 +44,9 @@
 - Get a content of a page，有三個方法，1）Revisions API (as wikitext)，2） Parse API (as HTML or wikitext)，3）API of the TextExtracts extension.
 
 
+#### 測試連結
+https://en.wikipedia.org/w/api.php?action=query&titles=taiwan&format=json&prop=images&format=json
+ > 取得taiwan這個名字的相關圖片。
+
+https://en.wikipedia.org/w/api.php?action=query&titles=File:Test.jpg&prop=imageinfo&iilimit=50&iiend=2007-12-31T23:59:59Z&iiprop=timestamp|user|url
+ > get the image link, by the title of the image.
