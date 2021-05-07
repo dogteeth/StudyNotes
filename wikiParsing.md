@@ -36,3 +36,11 @@
 ***
 
 [Wiki文件筆記](https://www.mediawiki.org/wiki/API:Main_page)
+
+- The maxlag parameter: If your task is not interactive, i.e. a user is not waiting for the result, you should use the maxlag parameter. The value of the maxlag parameter should be an integer number of seconds. This will prevent your task from running when the load on the servers is high. Higher values mean more aggressive behavior, lower values are nicer. Exmaple: maxlag=1
+- All new API users should use JSON.
+- Get a content of a page，有三個方法，1）Revisions API (as wikitext)，2） Parse API (as HTML or wikitext)，3）API of the TextExtracts extension.
+- 成
+- Get a content of a page，有三個方法，1）Revisions API (as wikitext)，2） Parse API (as HTML or wikitext)，3）API of the TextExtracts extension.
+
+
