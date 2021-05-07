@@ -61,3 +61,5 @@ http://en.wikipedia.org/?curid=18630637
 - 取得link
 https://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&generator=allpages&inprop=url&gapfrom=Apple&gaplimit=5
 
+- api endpoints
+https://nl.wikipedia.org/w/api.php  Dutch Wikipedia API
