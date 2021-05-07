@@ -50,3 +50,7 @@ https://en.wikipedia.org/w/api.php?action=query&titles=taiwan&format=json&prop=i
 
 https://en.wikipedia.org/w/api.php?action=query&titles=File:Test.jpg&prop=imageinfo&iilimit=50&iiend=2007-12-31T23:59:59Z&iiprop=timestamp|user|url
  > get the image link, by the title of the image.
+
+
+> 搜尋有關taiwan的網頁，並回傳一頁的wiki 
+https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=taiwan&srlimit=1&&format=json
