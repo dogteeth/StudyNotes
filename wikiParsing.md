@@ -58,4 +58,6 @@ https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=taiwan&srli
 - 取得pageid後的短網址
 http://en.wikipedia.org/?curid=18630637
 
+- 取得link
+https://en.wikipedia.org/w/api.php?action=query&format=json&prop=info&generator=allpages&inprop=url&gapfrom=Apple&gaplimit=5
 
