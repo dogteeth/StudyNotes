@@ -10,3 +10,13 @@ When a segue is triggered – perhaps through a button press or a table view sel
 
 
 #### strong, weak 與 unowned
+[資料來源](https://www.appcoda.com.tw/memory-management-swift/)
+
+- 與 Swift 記憶體管理的 Automatic Reference Counting （自動參考計數機制, ARC）有關。
+- Reference Counting 是以一項技術，是將資源（例如物件、記憶體或磁盤空間等）被參考的次數保存起來。簡單來說，ARC 可以把參考儲存到記憶體中，並自動清除沒有在使用的參考。
+- Reference Counting 僅適用於類別 (class) 的實例 (instance)，而不適用於結構 (structures) 和枚舉 (enumerations)，因為他們兩個都是數值型別 (Value Type)，而不是參考型別 (Reference Type)。
+- Swift 的記憶體管理會一直運作，你不需要自己去考慮記憶體管理的問題。當實例不再被使用時，ARC 會自動釋放所佔用的記憶體。
+- 每當你要初始化 init() 一個類別時，ARC 會自動配置記憶體來儲存資料；更具體來說，就是一部份的記憶體配置了給實例，並同時在屬性配置了數值，所以當不再需要實例時，deinit() 就會被呼叫，而 ARC 會將此實例的記憶體空間釋出。
+- ![arc-strong-weak-unowned](https://user-images.githubusercontent.com/18608853/117527448-bd744600-affe-11eb-870c-713f5b7c141d.png)
+
+
