@@ -68,8 +68,18 @@ https://nl.wikipedia.org/w/api.php  Dutch Wikipedia API
 #### [youtuber的實作](https://www.youtube.com/watch?v=Dk6Wopar10k&t=129s)
 1:20:37左右，說明api的使用方式
 
-```swift
+```
 
-
+?action=query
+&generator=search. 
+	&gsrsearch=Dave
+	&gsrlimit=20
+&prop=pageimages|extracts
+	&exchars=130
+	&exintro
+	&explaintext
+	&exlimit=max
+&format=json
+&origin=*
 
 ```
