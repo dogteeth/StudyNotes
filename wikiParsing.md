@@ -68,17 +68,17 @@ https://nl.wikipedia.org/w/api.php  Dutch Wikipedia API
 #### [youtuber的實作](https://www.youtube.com/watch?v=Dk6Wopar10k&t=129s)
 1:20:37左右，說明api的使用方式
 
-```
+```swift
 
 ?action=query
-&generator=search. 
-	&gsrsearch=Dave
-	&gsrlimit=20
-&prop=pageimages|extracts
-	&exchars=130
-	&exintro
-	&explaintext
-	&exlimit=max
+&generator=search //generator search的方式,可以讓我一次做多種search的要求,在此例做的是，pageimages, extracts的search
+	&gsrsearch=yoursearchtext //我要置入search的值
+	&gsrlimit=20 //最多給20個條目（沒有token最多只能要20個）
+&prop=pageimages|extracts //給我兩個東西，pageimages, extracts
+	&exchars=130 //給我130個文字。
+	&exintro //要多個extracts這個一定要放。
+	&explaintext //給我文字。
+	&exlimit=max //給我20個條目。
 &format=json
 &origin=*
 
