@@ -35,6 +35,16 @@ import SafariServices
 
 ```
 
+#### 另一種寫法
+```swift
+import SafariServices
+
+if let urlString = URL(string: urlString) {
+            UIApplication.shared.open(urlString, options: [:], completionHandler: nil)
+
+```
+
+
 
 #### 中文URL的處理
 - url的連結中有全形中文或全形空格，需先進行轉碼。
