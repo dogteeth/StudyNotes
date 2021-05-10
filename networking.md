@@ -16,6 +16,8 @@
 - 透過 DispatchQueue.main 來取得主執行緒的使用權，block 即可撰寫我們想要做的事，在實務上通常被用來更新 UI，因更新 UI 只能放在主執行緒。
 - DispatchQueue.global 產生的 Queues 是 Concurrent 的。
 
+[SwiftPal](https://www.swiftpal.io/articles/how-to-use-gcd-grand-central-dispatch-tutorial)
+- Dispatch Queue works in two main ways, which are synchronous execution & asynchronous execution.Synchronous is used when you want to execute only one task at a time. Whereas, Asynchronous means that multiple tasks can be executed at a time regardless of the finishing time, which means if a task needs some time to perform, the other tasks will not have to wait for it to complete.
 
 
 ##### async的提醒：stackoverflow
