@@ -87,3 +87,44 @@ https://zh.wikipedia.org/w/index.php?search=QUERY&title=taiwan&fulltext=Search
 &origin=*
 
 ```
+
+
+https://www.mediawiki.org/wiki/API:Query
+
+action=query
+
+prop:
+> extracts: Returns plain-text or limited HTML extracts of the given pages.
+> info: Get basic page information.
+> images: Returns all files contained on the given pages.
+> iwlinks: Returns all interlanguage links from the given pages.
+> pageviews: Shows per-page pageview data (the number of daily pageviews for each of the last pvipdays days).
+
+list:
+> allimages: Enumerate all images sequentially.
+> alllinks: Enumerate all links that point to a given namespace.
+> allpages: Enumerate all pages sequentially in a given namespace.
+> random: Get a set of random pages.
+> search: Perform a full text search.
+
+indexpageids: Include an additional pageids section listing all returned page IDs.
+
+titles: A list of titles to work on. Separate values with | or alternative.Maximum number of values is 50 (500 for clients allowed higher limits).
+
+pageids: A list of page IDs to work on. Type: list of integers. Separate values with | or alternative. Maximum number of values is 50 (500 for clients allowed higher limits).
+
+generator: Get the list of pages to work on by executing the specified query module. Note: Generator parameter names must be prefixed with a "g".
+> links: Returns all links from the given pages.
+> images: Returns all files contained on the given pages.
+> random: Get a set of random pages.
+
+
+****
+取得圖片：
+prop=pageimages
+prop=pageimages|pageterms, to get image and description.
+piprop=original, get the orignial 
+piprop=thumbnail&pithumbsize=600
+format=json&formatversion=2
+
+
