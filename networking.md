@@ -25,10 +25,13 @@ let urlString = "https://www.google.co.in/search?q=" + text
 ```swift
 import SafariServices
 
-if let urlString = URL(string: "http://www.ooxx.xxx") {
-  let vc  = SFSafariViewController(url: urlString, entersReaderIfAvailable: true)
-  present(vc, animated:true)
-}
+ if let urlString = URL(string: "http://www.google.com") {
+
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: urlString, configuration: config)
+            present(vc, animated: true)
+        }
 
 ```
 
