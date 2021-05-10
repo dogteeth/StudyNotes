@@ -1,3 +1,21 @@
+##### Grand Central Dispatch
+[GCD](https://learnappmaking.com/grand-central-dispatch-swift/)
+[GCD應用](https://franksios.medium.com/ios-gcd%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%92%E7%9A%84%E8%AA%AA%E6%98%8E%E8%88%87%E6%87%89%E7%94%A8-c69a68d01da1)
+
+- DispatchQueue.main.async{code}: code是在main thread下進行。譬如UI更新。
+- DispatchQueue.global().async{code}: code不是在main thread下進行。譬如download data。
+- Queues: 是資料結構中的一種型態，翻成中文叫「佇列」。它的特性是先進先出(FIFO, First-in First-out)。
+- Serial queues: 這個佇列裡的工作是按照順序執行的，一次只執行一個，當前一個執行完後，才會執行下一個。serial queues 適合拿來處理共享的資源，因為這樣可以確保存取是按照順序來的。
+- Concurrent queues: 相對於 serial 就是同時發生的。也是說多個工作是同時被執行的。concurrent queues 代表這個 queues 裡的工作會按順序「開始」執行，但因為是 concurrent ，所以不必等上一個工作執行完才接著執行下一個，因此每個工作執行結果的時間是不可預測的。
+- Synchronous: synchronous 的 function 只有在完成裡面的工作後，才會回傳值。
+- Asynchronous: 相對於 synchronous，asynchronous 的 function 會馬上回傳值。asynchronous function 裡的工作會按照順序執行，但這個 function 不會等其它的動作執行完，它會馬上回傳值，因此 asynchronous function 不會造成它所在的執行緒阻塞。
+- 綜合 Serial、Concurrent 的 Queues，加上 Synchronous 和 Asynchronous 的行為，會 有四種排列組合。
+  - concurrentQueue.sync, concurrentQueue.async
+  - serialQueue.sync, serialQueue.async
+-
+
+
+
 ##### async的提醒：stackoverflow
 You are using return instead of using a callback. You are doing your parsing when the network connection is done; asynchronously.
 To synchronize it, you'd need to use semaphores, but that is highly discouraged on the main thread.Instead, do the appropriate things with the result when your completion block is executed. Think of the data task as 'do stuff, come back to me when you're done'.
