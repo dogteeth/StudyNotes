@@ -129,3 +129,6 @@ generator: Get the list of pages to work on by executing the specified query mod
 
 #### Wiki Parsing, key value pair for Data Struct
 https://stackoverflow.com/questions/54415777/need-help-parsing-wikipedia-json-api-in-swift
+
+#### Use formatversion to decide the JSON Structure.
+https://en.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=pageimages&piprop=thumbnail&pithumbsize=600&titles=taiwan
