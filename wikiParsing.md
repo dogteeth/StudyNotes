@@ -67,6 +67,9 @@ https://nl.wikipedia.org/w/api.php  Dutch Wikipedia API
 - 直接用網頁開始wiki search 結果
 https://zh.wikipedia.org/w/index.php?search=QUERY&title=taiwan&fulltext=Search
 
+- get the 600px image
+https://en.wikipedia.org/w/api.php?action=query&titles=taiwan&prop=pageimages&piprop=thumbnail&pithumbsize=600&format=json
+
 
 
 #### [youtuber的實作](https://www.youtube.com/watch?v=Dk6Wopar10k&t=129s)
