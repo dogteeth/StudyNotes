@@ -17,3 +17,17 @@ let urlString = "https://www.google.co.in/search?q=" + text
 - 每一個process各由2個東西組成，1）memory space： (相關於obejct裹的var), 2）thread：作業系統能夠進行運算排程的最小單位。
 - thread 代表從某一個起始點開始（例如：main），到目前，所有函數的呼叫路徑，以及這些呼叫路徑上所有到的區域變數cpu內部的暫存器也會一起紀錄。
 - thread組成內容：1）stack,紀錄函數，呼叫路徑，及其用到的區域變數。 2）目前cpu的狀態。
+
+
+
+##### 取得連結後打開safari
+如果該連結有reader模式，以reader模式啟動
+```swift
+import SafariServices
+
+if let urlString = URL(string: "http://www.ooxx.xxx") {
+  let vc  = SFSafariViewController(url: urlString, entersReaderIfAvailable: true)
+  present(vc, animated:true)
+}
+
+```
