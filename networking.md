@@ -12,7 +12,9 @@
 - 綜合 Serial、Concurrent 的 Queues，加上 Synchronous 和 Asynchronous 的行為，會 有四種排列組合。
   - concurrentQueue.sync, concurrentQueue.async
   - serialQueue.sync, serialQueue.async
--
+- Dispatch Group的應用：dispatch groups 提供更方便的等待機制，當我們必須等待一個或一個以上的 thread 處理完工作後，再去執行某件事時，就可使用此機制來達成，不過 dispatch groups 有兩種狀況，一是 queue 裡的工作項目都是很單純的個別子執行緒；二是 queue 裡的工作項目除了都是個別的子執行緒外，每個子執行緒裡又有子執行緒，這種狀況實際上非常常見，例如在子執行緒裡又去呼叫後端的 API(後端 API 屬另一條子執行緒)，此時就要用比較特殊的作法來處理。
+- 透過 DispatchQueue.main 來取得主執行緒的使用權，block 即可撰寫我們想要做的事，在實務上通常被用來更新 UI，因更新 UI 只能放在主執行緒。
+- DispatchQueue.global 產生的 Queues 是 Concurrent 的。
 
 
 
