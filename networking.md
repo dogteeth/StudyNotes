@@ -42,6 +42,14 @@ let urlString = "https://www.google.co.in/search?q=" + text
 
 
 
+#### 打開WEB
+
+##### 三個打開web的方法
+- Mobile Safari：以行動版的safari打開指定URL。使用者暫時離開了app，切換到safari
+- UIWebView/WKWebView：將網頁嵌進APP裹。WKWebView是UIWebView的改良版。它俱備Nitro JS的引擎。
+- SFSafariViewController：最新的工具。讓Safari的功能整合進IOS
+
+
 ##### 取得連結後打開safari
 如果該連結有reader模式，以reader模式啟動
 ```swift
