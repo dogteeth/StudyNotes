@@ -2,6 +2,7 @@
 
 ```Swift
 func currentTimeStamp() -> String {
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYYMMddHHmm"
     let stringDate = dateFormatter.string(from: Date())
     return stringDate
