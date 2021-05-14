@@ -118,47 +118,42 @@ extension String {
 ```
 
 ##### Spin Annimation, while image is loading
-[來源](https://stackoverflow.com/questions/58263815/does-xcode-have-a-built-in-loading-animation-for-uiimageview)
+
+- 先做UIImage的extension, 把UIActivityIndicatorView的instance相關需要，在這裹設計。
+- 在loadImage相關的function, 宣告一個instance. 用這個instance去做start, stop.
+
 
 ```swift
 
-private var activityIndicator: UIActivityIndicatorView {
-    let activityIndicator = UIActivityIndicatorView()
-    activityIndicator.hidesWhenStopped = true
-    self.addSubview(activityIndicator)
-}
-
-func setImageFrom(_ urlString: String, completion: (() -> Void? = nil) ) {
-    guard let url = URL(string: urlString) else { return }
-    
-    let session = URLSession(configuration: .default)
-    let activityIndicator = self.activityIndicator
-    
-    DispatchQueue.main.async {
-        activityIndicator.startAnimating()
-    }
-    
-    let downloadImageTask = session.dataTask(with: url) { (data, response, error) in
-        if let error = error {
-            print(error.localizedDescription)
-        } else {
-            if let imageData = data {
-                DispatchQueue.main.async { [weak self] in 
-                    var image = UIImage(data: imageData)
-                    self?.image = nil
-                    self?.image = image
-                    image = nil
-                    completion?()
+func loadImage(_ urlString:String) {
+        let spin = imageView.activityIndicator
+        spin.startAnimating()
+        if let url = URL(string: urlString.urlEncoded()) {
+            let task  = URLSession.shared.dataTask(with: url) { data, respons, error in
+                guard let data = data, error == nil else {return}
+                
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data)
+                    spin.stopAnimating()
                 }
             }
+            task.resume()
         }
-        DispatchQueue.main.async {
-            activityIndicator.stopAnimating()
-            activityIndicator.removeFromSuperview()
-        }
-        session.finishTasksAndInvalidate()
-     }
-     downloadImageTask.resume()
-} 
+    }
 
+
+extension UIImageView {
+    fileprivate var activityIndicator : UIActivityIndicatorView {
+        get {
+            
+            let activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.center = CGPoint(x:self.frame.width/2, y:self.frame.height/2)
+            
+            activityIndicator.stopAnimating()
+            self.addSubview(activityIndicator)
+            return activityIndicator
+        }
+    }
+}
 ```
