@@ -51,3 +51,38 @@ barButton.menu = UIMenu(
 ```
 
 #### Reading Material [The Comprehensive Guide to iOS Context Menus](https://kylebashour.com/posts/context-menu-guide)
+
+
+#### imageView 加入 ContextContent
+- imageView(UIImageView的IBOutlet)，需要設 .isUserInteractionEnabled = true
+- UIContextMenuInteraction 設 delegate
+
+```Swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.isUserInteractionEnabled = true
+        let interaction = UIContextMenuInteraction(delegate: self)
+        imageView.addInteraction(interaction)
+}
+```
+- 做extension UIContextMenuInteractionDelegate
+- 在這個Delegate裹，只有一個function要做: configurationForMenuAtLocation。它需要回傳UIContextMenuConfiguration。
+
+```Swift
+extension ItemDetailTVC : UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+
+        UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            let menuCheckInAction = UIAction(title: "到訪打卡", image: UIImage(systemName: "pin")) { _ in
+                print("打卡押了")
+            }
+            let menuBookMarkAction = UIAction(title: "加入書籤", image: UIImage(systemName: "bookmark")) { _ in
+                print("書籤押了")
+            }
+            return UIMenu(title: "", children: [menuBookMarkAction, menuCheckInAction])
+
+        }
+    }
+}
+```
