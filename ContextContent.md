@@ -39,6 +39,7 @@
 ```
 - 在viewDidLoad裹，將bar button的 IBOulet以 menu的method，加入 menuAction, menuList
 - children: [ ] 放的是UIMenuElement。UIElement : An object representing a menu, action, or command.所以也可以直接放入ActionList, 或是兩層次，先用List，再放Action。
+- 重要：如果只有一個層次，一定是Action. 只放List不會有反應。
 
 ```Swift
 barButton.menu = UIMenu(
