@@ -393,3 +393,11 @@ showCompass = true
 showTraffic
 showScale
 
+
+
+#### 地圖上加入指方向的箭頭。
+```Swift
+  let TrackingUser = MKUserTrackingButton(mapView: mapView)
+  navigationItem.leftBarButtonItem = UIBarButtonItem(customView: TrackingUser)
+```
+
