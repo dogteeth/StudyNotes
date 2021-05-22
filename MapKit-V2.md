@@ -73,13 +73,33 @@ class CaseAnnotation: NSObject, MKAnnotation {
 
 ```
 
-- callout的action設計，則由同一個protocol下的function來處理。
+#### 地圖的大頭針的互動設計
+
+- 點大頭針上的callout action，（同一個protocol下的function來處理）
+
+notes: 重要要讓 view.annotation，需要 downcast as CaseAnnotation, 才能抓出item做passing.
 ```Swift
 
   func mapView(_ mapView: MKMapView,
            annotationView view: MKAnnotationView,
            calloutAccessoryControlTapped control: UIControl) {
-        print("good")
+
+        guard let caseAnnotation = view.annotation as? CaseAnnotation else { return }
+        
+        itemForSegue = caseAnnotation.item
+        //then peform seque:
+
     }
 
+```
+
+- 點大頭針即把地圖中心移過去
+
+notes: 抓出 view.annotation 的coordinat, 做處理。
+
+```Swift
+func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        guard let centerCoordinate = view.annotation?.coordinate else {return}
+        mapView.setCenter(centerCoordinate, animated: true)
+}
 ```
