@@ -19,7 +19,7 @@ func mapAnnotationSetup() {
     }
 ```
 
-CaseAnnotation的設計如下：
+- CaseAnnotation的設計如下：
 
 ```Swift
 import Foundation
@@ -42,4 +42,31 @@ class CaseAnnotation: NSObject, MKAnnotation {
     }
        
 }
+```
+
+
+#### AnnotationPin的設計
+- 在 mapView的function裹做設計。
+- mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+- 
+```Swift
+ func mapView(_ mapView: MKMapView,
+                 viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard annotation is CaseAnnotation else { return nil }
+        
+        let identifier = "pin"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+         
+        annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        
+        annotationView?.canShowCallout = true
+        annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
+        annotationView?.clusteringIdentifier = "clusterPin"
+        
+        return annotationView
+    }
+
 ```
