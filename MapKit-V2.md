@@ -48,7 +48,9 @@ class CaseAnnotation: NSObject, MKAnnotation {
 #### AnnotationPin的設計
 - 在 mapView的function裹做設計。
 - mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-- 
+- 這個func是在protocol：MKMapViewDelegate，要在ViewController 做 extension。
+- 設 delegate to self.這個我不大確定。
+- callout的設計，也放在 viewFor這個function裹。
 ```Swift
  func mapView(_ mapView: MKMapView,
                  viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -67,6 +69,17 @@ class CaseAnnotation: NSObject, MKAnnotation {
         annotationView?.clusteringIdentifier = "clusterPin"
         
         return annotationView
+    }
+
+```
+
+- callout的action設計，則由同一個protocol下的function來處理。
+```Swift
+
+  func mapView(_ mapView: MKMapView,
+           annotationView view: MKAnnotationView,
+           calloutAccessoryControlTapped control: UIControl) {
+        print("good")
     }
 
 ```
