@@ -49,7 +49,7 @@ class CaseAnnotation: NSObject, MKAnnotation {
 - 在 mapView的function裹做設計。
 - mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
 - 這個func是在protocol：MKMapViewDelegate，要在ViewController 做 extension。
-- 設 delegate to self.這個我不大確定。
+- 設 mapView.delegate = self
 - callout的設計，也放在 viewFor這個function裹。
 ```Swift
  func mapView(_ mapView: MKMapView,
