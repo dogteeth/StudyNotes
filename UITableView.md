@@ -29,3 +29,14 @@ var tapAction : ((UITableViewCell)->Void)?
     tableView.reloadData()
   }
 ```
+
+#### 讓cell在往上滾動時，出現fade out的功能。
+
+```swift
+   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        for cell in tableView.visibleCells as [UITableViewCell] {
+            let point = tableView.convert(cell.center, to: tableView.superview)
+            cell.alpha = ((point.y * 100) / tableView.bounds.maxY) / 100
+        }
+    }
+```
