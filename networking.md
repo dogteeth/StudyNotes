@@ -29,6 +29,10 @@ To synchronize it, you'd need to use semaphores, but that is highly discouraged 
 ```swift
 let urlString = "https://www.google.co.in/search?q=" + text 
 ```
+##### 直接連接Wiki頁面搜尋
+```Swift
+let url = "https://zh.wikipedia.org/wiki/" + text
+```
 
 ##### threads
 - fetching data from API happens on the background thread
