@@ -30,6 +30,22 @@ var tapAction : ((UITableViewCell)->Void)?
   }
 ```
 
+- 另一個例子。
+```Swift
+   cell.tapGoogleAction = { _ in
+       let text  = self.itemPassing?.caseName ?? "main"
+       let url = "https://www.google.co.in/search?q=" + text
+       if let urlString = URL(string: url.urlEncoded()) {
+              let config = SFSafariViewController.Configuration()
+              config.entersReaderIfAvailable = true
+              let vc = SFSafariViewController(url: urlString, configuration: config)
+              self.present(vc, animated: true)
+        }
+    }
+```
+
+
+
 #### 讓cell在往上滾動時，出現fade out的功能。
 
 ```swift
