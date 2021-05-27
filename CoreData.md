@@ -123,3 +123,59 @@
 
     }
 ```
+
+#### CoreData Singleton的製作：
+CoreDataManager.shared.dataFunction()
+
+```Swift
+
+   //加了static之後的內容，變成了class本身。instance是不可以使用的。
+    static let shared = CoreDataManager()
+    
+    //NSPersistentStoreDescription
+    //NSPersistenetContainer
+    //宣告的形式 -> persistentContainer: () = {}()
+    let persistentContainer : NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "OldHouseWalkingV05")
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error {
+                fatalError("Loding Failed \(error)")
+            }
+        }
+        return container
+    }()
+    
+
+```
+
+- 依條件尋找Core Data
+
+```Swift
+
+ func fetchItemByCaseName(name caseName:String) -> Item? {
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Item>(entityName: "Item")
+        
+        fetchRequest.predicate = NSPredicate(format: "caseName == %@", caseName)
+        
+        do {
+            let itemsFetched = try context.fetch(fetchRequest)
+            return itemsFetched.first
+            
+        } catch let fetchError {
+            print("Failed to fetch companies :\(fetchError)")
+        }
+        return nil
+    }
+    
+```
+- NSPredicate的條件，int與string都有不同。
+
+```Swift
+//String
+fetchRequest.predicate = NSPredicate(format: "caseName == %@", caseName)
+//Int
+fetchRequest.predicate = NSPredicate(format: "caseId == \(id)")
+```
+
+
