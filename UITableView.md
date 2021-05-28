@@ -56,3 +56,18 @@ var tapAction : ((UITableViewCell)->Void)?
         }
     }
 ```
+
+#### 刪除row
+
+```Swift
+ override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let safeItem = items?[indexPath.row] 
+            items?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            CoreDataManager.shared.deletingReadingTimeStamp(item: safeItem)
+        }
+    }
+```
