@@ -71,3 +71,40 @@
 
 
 ```
+
+#### 打開google map
+- plist 加入設定
+- 加入function
+
+
+
+![LSApplicationQueriesSchemes](https://user-images.githubusercontent.com/18608853/120062152-3d884b80-c093-11eb-9e21-a50360b7af5c.png)
+
+```Swift
+
+ func openGoogleMap() {
+        
+        let latDouble = item?.latitude ?? 0
+        let longDouble = item?.longitude ?? 0
+        
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {  //if phone has an app
+            
+            if let url = URL(
+                string:
+                    
+                    //"comgooglemaps://?saddr=&daddr=\(Float(latitude!)),\(Float(longitude!))&directionsmode=driving"
+                    
+                    "comgooglemaps://?saddr=&daddr=\(latDouble),\(longDouble)"
+            ) {
+                UIApplication.shared.open(url, options: [:])
+            }}
+        else {
+            //Open in browser
+            if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(latDouble),\(longDouble)&directionsmode=driving") {
+                UIApplication.shared.open(urlDestination)
+            }
+        }
+        
+    }
+```
+
