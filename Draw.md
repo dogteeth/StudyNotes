@@ -36,13 +36,14 @@ backgroundView
 
 
 ```
-
-
+#### 三角函數
+- 知道 1. 圓半徑，2.內角角度，即可取得座標軸。
 - sin(θ)
 - cos(θ)
 - tan(θ)
 
 ![001](https://user-images.githubusercontent.com/18608853/120089867-bdb0be80-c130-11eb-8de1-22d7d57e048e.jpg)
+
 
 
   
