@@ -47,6 +47,7 @@ backgroundView
 
 
 
-#### 三角函數的練習 
-[連結](https://yasuoyuhao.medium.com/如何用swift畫圓-利用三角函數畫圓-53d5bd569c0f)
+#### 三角函數的練習
+[youtube](https://www.youtube.com/watch?v=G4D_EhPi7Qk&list=WL&index=227)
+[文字](https://yasuoyuhao.medium.com/如何用swift畫圓-利用三角函數畫圓-53d5bd569c0f)
   
