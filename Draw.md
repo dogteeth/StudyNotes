@@ -36,16 +36,66 @@ backgroundView
 
 
 ```
+
+案例2
+
+```Swift
+
+import UIKit
+
+class DrawView : UIView {
+    override func draw(_ rect: CGRect) {
+        
+        c2(radiusLength: 100, s_angel: 270, e_angle: 30)
+
+    }
+    
+    
+    func c2(radiusLength:CGFloat, s_angel:CGFloat, e_angle : CGFloat ){
+        
+        
+        let path = UIBezierPath(
+            arcCenter: CGPoint(x: 250, y: 250),
+            radius: radiusLength,
+            startAngle: CGFloat.pi / 180 * s_angel,
+            endAngle: CGFloat.pi / 180 * e_angle,
+            clockwise: true)
+        
+        path.lineWidth = 100
+        
+        path.stroke()
+       
+        let shapeLayer = CAShapeLayer()
+
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
+      
+        
+        view.layer.addSublayer(shapeLayer)
+    
+    }
+    
+}
+
+
+let view = DrawView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+
+view.backgroundColor = .gray
+
+
+```
+
+
 #### 三角函數概念
 - 知道 1. 圓半徑，2.內角角度，即可取得座標軸。
 - sin(θ)
 - cos(θ)
 - tan(θ)
+- 圓周 ＝ 半徑 X 2 X PI
+- angle 1 度 ＝ 圓周/360
+
 
 ![001](https://user-images.githubusercontent.com/18608853/120089867-bdb0be80-c130-11eb-8de1-22d7d57e048e.jpg)
-
-
-
 
 #### 三角函數的練習
 [youtube](https://www.youtube.com/watch?v=G4D_EhPi7Qk&list=WL&index=227)
