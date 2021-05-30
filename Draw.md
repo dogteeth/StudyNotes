@@ -36,4 +36,13 @@ backgroundView
 
 
 ```
+
+
+- sin(θ)
+- cos(θ)
+- tan(θ)
+
+
+![Uploading 97jyr5ryh.jpg…]()
+
   
