@@ -101,3 +101,16 @@ view.backgroundColor = .gray
 [youtube](https://www.youtube.com/watch?v=G4D_EhPi7Qk&list=WL&index=227)
 [文字](https://yasuoyuhao.medium.com/如何用swift畫圓-利用三角函數畫圓-53d5bd569c0f)
   
+
+
+#### 取得基本數據
+
+- bounds: The bounds rectangle, which describes the view’s location and size in its own coordinate system.
+
+```Swift
+bounds.size.width
+bounds.size.height
+```
+
+
+
