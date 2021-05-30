@@ -42,7 +42,7 @@ backgroundView
 - cos(θ)
 - tan(θ)
 
+![001](https://user-images.githubusercontent.com/18608853/120089867-bdb0be80-c130-11eb-8de1-22d7d57e048e.jpg)
 
-![Uploading 97jyr5ryh.jpg…]()
 
   
