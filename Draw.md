@@ -36,7 +36,7 @@ backgroundView
 
 
 ```
-#### 三角函數
+#### 三角函數概念
 - 知道 1. 圓半徑，2.內角角度，即可取得座標軸。
 - sin(θ)
 - cos(θ)
@@ -46,4 +46,7 @@ backgroundView
 
 
 
+
+#### 三角函數的練習 
+[連結](https://yasuoyuhao.medium.com/如何用swift畫圓-利用三角函數畫圓-53d5bd569c0f)
   
