@@ -112,5 +112,7 @@ bounds.size.width
 bounds.size.height
 ```
 
-
+#### ViewController與UIView class之間的練習
+- UIView加入 IBOutlet，即可以用IBOutlet的來操作UIView class裹的Method.
+notes: 所以 IBOutlet就是class的 init的意思嗎？
 
