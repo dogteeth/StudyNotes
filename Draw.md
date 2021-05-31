@@ -111,6 +111,11 @@ view.backgroundColor = .gray
 bounds.size.width
 bounds.size.height
 ```
+也可以直接用？
+```Swift
+bounds.width
+bounds.height
+```
 
 #### ViewController與UIView class之間的練習
 - UIView加入 IBOutlet，即可以用IBOutlet的來操作UIView class裹的Method.
