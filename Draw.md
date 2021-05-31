@@ -125,3 +125,6 @@ notes: 所以 IBOutlet就是class的 init的意思嗎？
 - IBDesignable
 - IBInspectable
 - Interface Builder = IB
+
+
+> Any drawing done in draw(_:) goes into the view’s graphics context. Be aware that if you draw outside of draw(_:), you’ll have to create your own graphics context.
