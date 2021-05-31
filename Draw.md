@@ -174,4 +174,92 @@ override func draw(_ rect: CGRect) {
     }
 
 ```
+
+- VC controll UIView的關鍵在於 how to  passing value to UIView and forced to re-draw
+- passing value to UIView, 利用VC的 IBOute 去取得value ex: countView.countNum += 1
+- 在UIView的 value地方，必需加上 setNeedsDisplay()，只要value被修正，它就會呼叫draw，重新畫一次。
+
+在vc的設計
+
+```Swift
+class ViewController: UIViewController {
+
+    @IBOutlet weak var countView: CountView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func setCountNumBTN(_ sender: MainBTN) {
         
+        print("you pressed")
+        countView.countNum += 1
+    }
+}
+```
+在 UIView的設計
+
+```Swift
+import UIKit
+
+class CountView: UIView {
+ 
+    @IBInspectable var countNum : Int = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    @IBInspectable var counterColor: UIColor = UIColor.lightGray
+    @IBInspectable var meetColor: UIColor = UIColor.darkGray
+
+    
+    override func draw(_ rect: CGRect) {
+
+        print(countNum)
+        
+        let doubleRadius = max(bounds.width, bounds.height)
+        
+        let viewWidth = bounds.width
+        let viewHieght = bounds.height
+        
+        let center = CGPoint(x: viewWidth/2, y: viewHieght/2)
+        
+        
+        let path = UIBezierPath(
+                    arcCenter: center,
+            radius: doubleRadius/2 * 0.6,
+                    startAngle: CGFloat.pi / 180 * 270,
+            endAngle: CGFloat.pi / 180 * (270+360),
+            clockwise: true)
+        path.lineWidth = 100
+        counterColor.setStroke()
+        path.stroke()
+        
+        
+       //meet
+        
+        
+        
+        let path2 = UIBezierPath(
+                    arcCenter: center,
+            radius: doubleRadius/2 * 0.6,
+                    startAngle: CGFloat.pi / 180 * 270,
+            endAngle: CGFloat.pi / 180 * CGFloat((270 + countNum*10 )),
+            clockwise: true)
+        path2.lineWidth = 100
+        meetColor.setStroke()
+        path2.stroke()
+
+        
+    }
+    
+
+}
+
+
+```
+
+
+
