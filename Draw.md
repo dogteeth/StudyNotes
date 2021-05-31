@@ -133,3 +133,7 @@ notes: 所以 IBOutlet就是class的 init的意思嗎？
 
 
 > Any drawing done in draw(_:) goes into the view’s graphics context. Be aware that if you draw outside of draw(_:), you’ll have to create your own graphics context.
+
+
+> Never call draw(_:) directly. If your view is not being updated, then call setNeedsDisplay().
+setNeedsDisplay() does not itself call draw(_:), but it flags the view as “dirty,” triggering a redraw using draw(_:) on the next screen update cycle. Even if you call setNeedsDisplay() five times in the same method, you’ll call draw(_:) only once.
