@@ -118,7 +118,9 @@ notes: 所以 IBOutlet就是class的 init的意思嗎？
 
 
 
-#### 123
+#### raywenderlich.com
 [連結](https://www.raywenderlich.com/8003281-core-graphics-tutorial-getting-started)
 
 
+IBDesignable
+IBInspectable
