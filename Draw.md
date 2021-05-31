@@ -124,3 +124,4 @@ notes: 所以 IBOutlet就是class的 init的意思嗎？
 
 - IBDesignable
 - IBInspectable
+- Interface Builder = IB
