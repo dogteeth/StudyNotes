@@ -137,3 +137,41 @@ notes: 所以 IBOutlet就是class的 init的意思嗎？
 
 > Never call draw(_:) directly. If your view is not being updated, then call setNeedsDisplay().
 setNeedsDisplay() does not itself call draw(_:), but it flags the view as “dirty,” triggering a redraw using draw(_:) on the next screen update cycle. Even if you call setNeedsDisplay() five times in the same method, you’ll call draw(_:) only once.
+
+##### 畫圖的主要步驟
+- setup a path : let plusPath = UIBezierPath()
+- set the line width : plusPath.lineWidth = Constants.plusLineWidth
+- set the start point : plusPath.move(to: CGPoint)
+- set the end point : plusPath.addLine(to: CGPoint)
+- set the stroke color : UIColor.white.setStroke()
+- begin to draw : plusPath.stroke()
+
+```Swift
+
+override func draw(_ rect: CGRect) {
+        let path = UIBezierPath(ovalIn: rect)
+        UIColor.blue.setFill()
+        path.fill()
+        
+        let plusWidth = min(bounds.width, bounds.height)
+          * Constants.plusButtonScale
+        let halfPlusWidth = plusWidth / 2
+       
+        
+        let plusPath = UIBezierPath()
+        
+        
+        plusPath.lineWidth = Constants.plusLineWidth
+        plusPath.move(to: CGPoint(
+          x: halfWidth - halfPlusWidth,
+          y: halfHeight))
+        plusPath.addLine(to: CGPoint(
+          x: halfWidth + halfPlusWidth,
+          y: halfHeight))
+        UIColor.white.setStroke()
+        plusPath.stroke()
+
+    }
+
+```
+        
