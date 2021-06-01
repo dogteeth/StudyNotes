@@ -258,8 +258,98 @@ class CountView: UIView {
 
 }
 
-
 ```
 
+#### 加入 Animation 的圖表
 
+```Swift
+import UIKit
+
+class PieChartView: UIView {
+    
+    var countNum : Int = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    var counterColor: UIColor = UIColor.lightGray
+    var meetColor: UIColor = UIColor.darkGray
+    
+    override func draw(_ rect: CGRect) {
+        
+        print(countNum)
+                
+        
+        let doubleRadius = max(bounds.width, bounds.height)
+        
+        let viewWidth = bounds.width
+        let viewHieght = bounds.height
+        let radius = doubleRadius/2 * 0.6
+        let center = CGPoint(x: viewWidth/2, y: viewHieght/2)
+        let lineWidth : CGFloat = 70
+        let durationTime : Int = 1
+        
+        let path = UIBezierPath(
+                    arcCenter: center,
+            radius: radius,
+                    startAngle: CGFloat.pi / 180 * 270,
+            endAngle: CGFloat.pi / 180 * (270+360),
+            clockwise: true)
+
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.fillColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0) .cgColor
+
+        shapeLayer.strokeColor = counterColor.cgColor
+        shapeLayer.lineWidth = lineWidth
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeStart = 0.0
+
+        layer.addSublayer(shapeLayer)
+        
+        
+        //得到的進度
+
+        let path2 = UIBezierPath(
+                    arcCenter: center,
+            radius: radius,
+                    startAngle: CGFloat.pi / 180 * 270,
+            endAngle: CGFloat.pi / 180 * CGFloat((280 +  countNum)),
+            clockwise: true)
+        path2.lineWidth = lineWidth
+        
+        
+        let shapeLayer2 = CAShapeLayer()
+        shapeLayer2.fillColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0) .cgColor
+
+        shapeLayer2.strokeColor = meetColor.cgColor
+        shapeLayer2.lineWidth = lineWidth
+        shapeLayer2.path = path2.cgPath
+        shapeLayer2.strokeStart = 0.0
+
+        let startAnimation2 = CABasicAnimation(keyPath: "strokeStart")
+        
+        startAnimation2.fromValue = 0
+        startAnimation2.toValue = 0.0
+        
+        let endAnimation2 = CABasicAnimation(keyPath: "strokeEnd")
+        endAnimation2.fromValue = 0.2
+        endAnimation2.toValue = 1.0
+        
+        
+        let animation2 = CAAnimationGroup()
+        animation2.animations = [startAnimation2, endAnimation2]
+        animation2.duration = CFTimeInterval(durationTime)
+        shapeLayer2.add(animation2, forKey: "MyAnimation")
+        
+        layer.addSublayer(shapeLayer2)
+        
+        
+    }
+    
+
+}
+
+
+```
 
