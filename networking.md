@@ -161,3 +161,7 @@ extension UIImageView {
     }
 }
 ```
+
+#### Loading Image cache的運用
+
+[study](https://medium.com/flawless-app-stories/reusable-image-cache-in-swift-9b90eb338e8d)
