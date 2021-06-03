@@ -353,3 +353,5 @@ class PieChartView: UIView {
 
 ```
 
+#### 視圖區縮小的方式
+- .insetBy(dx:CGFloat, dy:CGFloat)
