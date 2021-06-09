@@ -42,8 +42,6 @@ func loadImage(_ urlString:String) {
             let task  = URLSession.shared.dataTask(with: url) { data, respons, error in
                 guard let data = data, error == nil else {return}
                 
-                
-                //test cache
                 guard let newImage = UIImage(data:data) else {return}
                 self.imageCache.setObject(newImage, forKey: nsurlString )
                 
