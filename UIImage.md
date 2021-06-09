@@ -4,6 +4,12 @@
 [來源](https://stackoverflow.com/questions/29137488/how-do-i-resize-the-uiimage-to-reduce-upload-image-size/29138120)
 ```Swift
 
+let image = UIImage(data: try! Data(contentsOf: URL(string:"http://i.stack.imgur.com/Xs4RX.jpg")!))!
+
+let thumb1 = image.resized(withPercentage: 0.1)
+let thumb2 = image.resized(toWidth: 72.0)
+
+
 extension UIImage {
     func resized(withPercentage percentage: CGFloat, isOpaque: Bool = true) -> UIImage? {
         let canvas = CGSize(width: size.width * percentage, height: size.height * percentage)
