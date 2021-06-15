@@ -48,3 +48,40 @@
     }
 
 ```
+
+
+#### 旋轉view
+
+```Swift
+
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let rotation = UIRotationGestureRecognizer(
+          target: self,
+          action: #selector(rotation))
+
+        self.view.addGestureRecognizer(rotation)
+        
+
+    }
+    
+
+@objc func rotation(recognizer:UIRotationGestureRecognizer) {
+        // 弧度
+        let radian = recognizer.rotation
+
+        // 旋轉的弧度轉換為角度
+        let angle = radian * (180 / CGFloat(Double.pi))
+
+        wheelDrawView.transform =
+            CGAffineTransform(rotationAngle: radian)
+
+        print("旋轉角度： \(angle)")
+    }
+
+
+
+
+```
