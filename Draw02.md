@@ -44,3 +44,17 @@ pathTransform = pathTransform.translatedBy(x: -center.x, y: -center.y)
 - similarilty
 - affine
 - projective
+
+
+#### 仿射變換 affine transformation
+- identiy
+- translation
+- rotation
+- isotropic(Uniform Scaling)
+- scaling
+- reflection
+- shear!
+
+[Uploading example.png…]()
+
+
