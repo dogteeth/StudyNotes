@@ -1,3 +1,8 @@
+[參考1](https://www.raywenderlich.com/10317653-calayer-tutorial-for-ios-getting-started)
+[參考2](https://www.calayer.com/core-animation/2016/05/22/cashapelayer-in-depth.html)
+
+
+
 #### 什麼是CAShapeLayer？
 - The "CA" in CAShapeLayer stands for CoreAnimation.
 - If you wish to animate, move, manipulate, or well, anything else to a UIBezierPath, you need to use a CALayer (or it's subclass CAShapeLayer).
