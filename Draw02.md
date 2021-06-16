@@ -1,5 +1,5 @@
-[參考1](https://www.raywenderlich.com/10317653-calayer-tutorial-for-ios-getting-started)
-[參考2](https://www.calayer.com/core-animation/2016/05/22/cashapelayer-in-depth.html)
+- [參考1](https://www.raywenderlich.com/10317653-calayer-tutorial-for-ios-getting-started)
+- [參考2](https://www.calayer.com/core-animation/2016/05/22/cashapelayer-in-depth.html)
 
 
 
@@ -27,4 +27,12 @@ shapeLayer.path = UIBezierPath(rect: shapeLayer.bounds).cgPath
 shapeLayer.strokeColor = UIColor.red.cgColor
 layer.addSublayer(shapeLayer)
 
+```
+
+- CGAffineTransfrom
+```swift
+var pathTransform  = CGAffineTransform.identity
+pathTransform = pathTransform.translatedBy(x: center.x, y: center.y)
+pathTransform = pathTransform.rotated(by: CGFloat(-.pi / 2.0))
+pathTransform = pathTransform.translatedBy(x: -center.x, y: -center.y)
 ```
