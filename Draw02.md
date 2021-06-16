@@ -6,4 +6,20 @@
 #### 如何使用CAShapeLayer
 - make a instance of CAShapeLayer, let shapeLayer = CAShapeLayer()
 - using this instance to setup all the details of the subjects.
-- make a instance of UIBezierPath()
+- make a instance of UIBezierPath() according to the setup of the shapeLayer.
+- 然後，把 UIBezierPath pass 給 CAShapeLayer(!!!!不懂為什麼要這麼麻煩）
+- 完成結尾。
+
+```Swift
+
+let shapeLayer = CAShapeLayer()
+
+shapeLayer.bounds = CGRect(x: 0.0, y: 0.0, width: 120.0, height: 120.0)
+shapeLayer.lineWidth = 2.0
+shapeLayer.fillColor = nil
+shapeLayer.path = UIBezierPath(rect: shapeLayer.bounds).cgPath
+
+shapeLayer.strokeColor = UIColor.red.cgColor
+layer.addSublayer(shapeLayer)
+
+```
