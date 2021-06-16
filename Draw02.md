@@ -54,7 +54,15 @@ pathTransform = pathTransform.translatedBy(x: -center.x, y: -center.y)
 - scaling
 - reflection
 - shear!
+- 
 ![example](https://user-images.githubusercontent.com/18608853/122165839-5d997680-ceab-11eb-96bf-ba3ab272d7e3.png)
 
+
+- UIView handles many things, including layout and touch events. However, it doesn’t directly control drawing or animations. UIKit delegates that task to the Core Animation framework, which enables the use of CALayer. UIView, in fact, is just a wrapper over CALayer.
+Each UIView has one root CALayer, which can contain multiple sublayers. When you set bounds on a UIView, the view in turn sets bounds on its backing CALayer. If you call layoutIfNeeded() on a UIView, the call gets forwarded to the root CALayer.
+
+- Layers can have sublayers: Just like views can have subviews, layers can have sublayers. You can use these for some cool effects!
+- Their properties are animatable: When you change the property of a layer, you can use CAAnimation to animate the changes.
+- Layers are lightweight: Layers are lighter weight than views, and therefore help you achieve better performance.
 
 
