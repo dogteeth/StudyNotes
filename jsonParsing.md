@@ -29,14 +29,20 @@ func versionDataParsing() {
 ```swift
 func caseJSONParsing() {
         
+        
+        //取得json檔案所在。確認是可以用的。
         guard let fileLocation = Bundle.main.url(forResource: "0-600json", withExtension: "json")
         else {return}
         
+        
         do {
+        
+            //將檔案所在的資料變成data，Data的格式。
             let data = try Data(contentsOf: fileLocation)
-            
+            //將data, 進行 decode，以 [CaseJSON]這個格式進行 decode. 
             let safeData = try JSONDecoder().decode([CaseJSON].self, from: data)
             
+            //取得data後，依序存入CoreData裹。
             for n in safeData {
                 let newItem = Item(context: context)
                 
