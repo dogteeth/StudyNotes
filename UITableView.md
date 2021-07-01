@@ -57,7 +57,7 @@ var tapAction : ((UITableViewCell)->Void)?
     }
 ```
 
-#### 刪除row
+#### [刪除row](https://stackoverflow.com/questions/29886642/hide-uitableview-cell)
 
 ```Swift
  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -73,3 +73,37 @@ var tapAction : ((UITableViewCell)->Void)?
 ```
 
 
+#### hide the cell 
+- hide the cell
+- set the height of the row to zero
+
+```Swift
+
+func tableView(tableView: UITableView, 
+               cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+   let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+
+   if indexPath.row == 1 {
+       cell?.hidden = true
+   } else {
+       cell?.hidden = false
+   }
+   return cell      
+}
+
+
+func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+    var rowHeight:CGFloat = 0.0
+
+    if(indexPath.row == 1){
+        rowHeight = 0.0
+    } else {
+        rowHeight = 55.0    //or whatever you like
+    }
+    return rowHeight
+}
+
+
+```
