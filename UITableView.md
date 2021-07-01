@@ -73,7 +73,8 @@ var tapAction : ((UITableViewCell)->Void)?
 ```
 
 
-#### hide the cell 
+#### hide the cell
+[連結](https://stackoverflow.com/questions/29886642/hide-uitableview-cell)
 - hide the cell
 - set the height of the row to zero
 
