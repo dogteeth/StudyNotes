@@ -81,7 +81,48 @@ override func viewDidLoad() {
         print("旋轉角度： \(angle)")
     }
 
+```
 
+#### 判斷tap在view裹的所在位置。
+
+```Swift
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(touchedScreen(touch:)))
+        view.addGestureRecognizer(tap)
+    }
+
+    
+    @objc func touchedScreen(touch: UITapGestureRecognizer) {
+        
+        //取得tap的所在位置。
+        let touchPoint = touch.location(in: pieChartView)
+        print(touchPoint)
+
+        let hei = pieChartView.bounds.height
+        let wid = pieChartView.bounds.width
+        let center = CGPoint(x: wid/2, y: hei/2)
+
+        let dT = center.distance(to: touchPoint)
+
+        print("dt: \(dT)")
+        if dT > 100 {
+            print("not the circle")
+        } else {
+            print("in the circle")
+        }
+        
+    }
+
+}
+
+//利用三角含數取得兩點之間的距離。
+extension CGPoint {
+    func distance(to point: CGPoint) -> CGFloat {
+        return sqrt(pow((point.x - x), 2) + pow((point.y - y), 2))
+    }
+}
 
 
 ```
