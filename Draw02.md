@@ -13,6 +13,35 @@
 - Layers are lightweight: Layers are lighter weight than views, and therefore help you achieve better performance.
 They have tons of useful properties: You’ll explore some of them in the following examples.
 
+
+#### layer可以操作的變數
+```swift
+//1
+layer.frame = viewForLayer.bounds
+layer.contents = UIImage(named: "star")?.cgImage
+
+// 2
+layer.contentsGravity = .center
+layer.magnificationFilter = .linear
+
+// 3
+layer.cornerRadius = 100.0
+layer.borderWidth = 12.0
+layer.borderColor = UIColor.white.cgColor
+layer.backgroundColor = swiftOrangeColor.cgColor
+
+//4
+layer.shadowOpacity = 0.75
+layer.shadowOffset = CGSize(width: 0, height: 3)
+layer.shadowRadius = 3.0
+layer.isGeometryFlipped = false
+
+```
+
+- CALayer has two additional properties that improve performance: shouldRasterize and drawsAsynchronously.
+- shouldRasterize is false by default. When set to true, the layer’s contents only render once, which improves performance. It’s perfect for objects that animate around the screen but don’t change in appearance.
+- drawsAsynchronously is the opposite of shouldRasterize, and it’s also false by default. Set it to true to improve performance when the app needs to repeatedly redraw a layer’s contents. This might happen, for example, when you work with an emitter layer that continuously renders animated particles. You’ll use this feature later in the tutorial.
+
 #### 如何使用CAShapeLayer
 - make a instance of CAShapeLayer, let shapeLayer = CAShapeLayer()
 - using this instance to setup all the details of the subjects.
