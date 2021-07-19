@@ -66,3 +66,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         collectionView.delegate = self
         collectionView.dataSource = self
 ```
+
+- Scroll Direction Setup
+```Swift
+       if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizonta
+            }
+```
