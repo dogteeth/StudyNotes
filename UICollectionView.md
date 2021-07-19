@@ -58,3 +58,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 ```
+
+- viewDidLoad
+
+```swift
+        collectionView.collectionViewLayout = UICollectionViewFlowLayout()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+```
