@@ -114,6 +114,4 @@ extension UIView {
 
 
 ```
-
-*** Note：要讓
-
+| 要讓layouts自動調整，放進同一個stack就可以有這樣的功能了。
