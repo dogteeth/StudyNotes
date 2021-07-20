@@ -1,4 +1,4 @@
-#### 動作
+#### 設計UICollectionView
 - 和UITableView一樣的概念
 - 加入三個extension: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 - UICollectionViewDataSource: 處理 number of cells, dequeue the cell, 
@@ -80,8 +80,9 @@ let indexPath = IndexPath(item: 2, section: 0)
 ```
 
 
-- 自動收放的 collectionView height
-    - 先做UIView的動畫extension
+#### 自動收放的 collectionView height
+
+- 先做UIView的動畫extension
 ```Swift
 extension UIView {
     
@@ -92,7 +93,9 @@ extension UIView {
     }
 }
 ```
-    - BTN的部份再加入判斷，
+
+- BTN的部份再加入判斷，
+
 
 ```Swift
 @IBAction func viewOpenAndClose(_ sender: UIButton) {
