@@ -6,3 +6,13 @@
 
 - bbox = left,bottom,right,top
 - bbox = min Longitude , min Latitude , max Longitude , max Latitude 
+
+
+- one latitude/one longitutde  = 111 km
+- latitude 為南北緯
+- longitude 為東西經
+
+
+
+
+
