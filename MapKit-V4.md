@@ -16,7 +16,7 @@
 
 [other property for cllocation](https://www.advancedswift.com/user-location-in-swift/)
 
-```
+```swift
 // Altitude
 let altitude = location.altitude
 
