@@ -14,5 +14,20 @@
 
 
 
+[other property for cllocation](https://www.advancedswift.com/user-location-in-swift/)
 
+```
+// Altitude
+let altitude = location.altitude
 
+// Speed
+let speed = location.speed
+
+// Course, degrees relative to due north
+let source = location.course
+
+// Distance between two CLLocation
+// Given another CLLocation, otherLocation
+let distance = location.distance(from: otherLocation)
+
+```
