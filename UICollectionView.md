@@ -81,7 +81,7 @@ let indexPath = IndexPath(item: 2, section: 0)
 
 
 - 自動收放的 collectionView height
-先做UIView的動畫extension
+    - 先做UIView的動畫extension
 ```Swift
 extension UIView {
     
@@ -91,5 +91,24 @@ extension UIView {
         })
     }
 }
+```
+    - BTN的部份再加入判斷，
+
+```Swift
+@IBAction func viewOpenAndClose(_ sender: UIButton) {
+        
+        viewIsOpen = !viewIsOpen
+        
+        if viewIsOpen == true {
+            collectionView.setView(view: collectionView, hidden: false)
+            openAndCloseBTN.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        } else  {
+            collectionView.setView(view: collectionView, hidden: true)
+            openAndCloseBTN.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+        }
+        
+    }
+
+
 ```
 
