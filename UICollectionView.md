@@ -78,3 +78,18 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 let indexPath = IndexPath(item: 2, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: true)
 ```
+
+
+- 自動收放的 collectionView height
+先做UIView的動畫extension
+```Swift
+extension UIView {
+    
+    func setView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.05, options: .curveEaseInOut, animations: {
+            view.isHidden = hidden
+        })
+    }
+}
+```
+
