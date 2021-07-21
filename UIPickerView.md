@@ -27,3 +27,20 @@ func numberOfComponents(in pickerView: UIPickerView) -> Int {
 ```
 
 [Picker Example Study](https://makeapppie.com/2014/10/21/swift-swift-formatting-a-uipickerview/)
+
+
+- 改變pickerView內的文字大小
+```Swift
+func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Arial", size: 16)
+            pickerLabel?.textAlignment = .center
+        }
+        pickerLabel?.text = pickerData[row]
+        pickerLabel?.textColor = UIColor.label
+
+        return pickerLabel!
+    }
+```
