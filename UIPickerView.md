@@ -1,1 +1,29 @@
+- UIPickerView就像UITableView一樣的概念
+- 需要 delegate, datasource的設定。
 
+#### 設定UIPickerView的方式
+- VC需要extension: UIPickerViewDelegate, UIPickerViewDataSource
+- 建立 pickerView的IBOutlet
+- delegate, datasource都要設 delegate = self
+- picker內的文字，製作array。
+- 增加protocol, protocol相關function如下：
+
+```Swift
+func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("you select\(row)")
+    }
+```
+
+[Picker Example Study](https://makeapppie.com/2014/10/21/swift-swift-formatting-a-uipickerview/)
