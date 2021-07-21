@@ -31,3 +31,8 @@ let source = location.course
 let distance = location.distance(from: otherLocation)
 
 ```
+
+#### CLLocation & CLLocationCoordinate2D
+- CLLocation : A CLLocation object contains the geographical location and altitude of a device, along with values indicating the accuracy of those measurements and when they were collected. In iOS, a location object also contains course information — that is, the speed and heading in which the device was moving. 
+- Typically, you don’t create location objects yourself. After you request location updates from your CLLocationManager object, the system uses onboard sensors to gather location data and report that data to your app. Some services also return previously collected location data, which you can use as context to improve your services. You can always retrieve the most recently collected location from the location property of your CLLocationManager object. You may create location objects yourself when you want to cache custom location data or calculate the distance between two geographical coordinates.
+- CLLocationCoordinate2D: The latitude and longitude associated with a location, specified using the WGS 84 reference frame.
