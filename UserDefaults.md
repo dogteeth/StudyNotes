@@ -49,3 +49,34 @@
         updateCaseRecommendationView(isClose: isClose ?? false)
     }
 ```
+
+#### 利用UserDefaults紀錄使用字形大小
+- 宣告UserDefaults
+```Swift
+    let defaults = UserDefaults.standard
+```
+- viewDidLoad的地方，取UserDefault的值。
+```Swift
+ override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let userDefaultTextFontSize = defaults.integer(forKey: "readerModeFontSize")
+        
+        stepper.value = Double(userDefaultTextFontSize)
+        stepper.maximumValue = 70
+        stepper.minimumValue = 18
+        
+        textView.text = readerModeString
+        textView.font = textView.font?.withSize(CGFloat(userDefaultTextFontSize))
+        
+    }
+```
+- 在function的地方做操作，並回存UserDefaults
+```Swift
+ @IBAction func fontSizeBTN(_ sender: UIStepper) {
+        
+        defaults.setValue(Int(sender.value), forKey: "readerModeFontSize")
+        
+        textView.font = textView.font?.withSize(CGFloat(sender.value))
+    }
+```
