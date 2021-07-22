@@ -137,3 +137,41 @@ extension UICollectionViewCell {
     }
 }
 ```
+
+#### 讓 collectionView reload時有個動畫的感覺
+```Swift
+
+self.collectionView.performBatchUpdates({
+                            let indexSet = IndexSet(integersIn: 0...0)
+                            self.collectionView.reloadSections(indexSet)
+                        }, completion: nil)
+        let indexPath = IndexPath(item: 0, section: 0)
+                    self.collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: true)
+        
+```
+
+#### 讓 collectionView cell 有 longPress的功能
+*note: view controller要設extension: UIGestureRecognizerDelegate
+```Swift
+private func setupLongGestureRecognizerOnCollection() {
+        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
+        longPressedGesture.minimumPressDuration = 0.5
+        longPressedGesture.delegate = self
+        longPressedGesture.delaysTouchesBegan = true
+        collectionView?.addGestureRecognizer(longPressedGesture)
+    }
+
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != .began) {
+            return
+        }
+
+        let p = gestureRecognizer.location(in: collectionView)
+
+        if let indexPath = collectionView?.indexPathForItem(at: p) {
+            centerCaseLocation(caseItem: caseNearBy10Kilo[indexPath.row])
+            print("Long press at item: \(indexPath.row)")
+        }
+    }
+
+```
