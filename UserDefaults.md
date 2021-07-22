@@ -1,3 +1,12 @@
+#### UserDefaults Documentations
+```Swift
+func integer(forKey defaultName: String) -> Int
+```
+- The integer value associated with the specified key. If the specified key doesn‘t exist, this method returns 0.
+- This method automatically coerces certain values into equivalent integer values (if one can be determined). The Boolean value true becomes 1 and false becomes 0. A floating point number becomes the greatest integer that‘s less than that number (for example, 2.67 becomes 2). A string that represents an integer becomes the equivalent integer (for example “123“ becomes 123).
+
+
+
 #### 利用UserDefaults做App第一次使用的處理。
 
 - 先宣告 defaults
