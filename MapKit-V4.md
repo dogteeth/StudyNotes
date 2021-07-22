@@ -42,3 +42,25 @@ let distance = location.distance(from: otherLocation)
 - locationManager要取得gps定位，會花時間。
 - 需要取得coordinate的資料才做事情的程式，要放在didUpdateLocations的function裹。 
    - 譬如：table view的資料，依update location後來推薦，即放在didUpdateLocations的function。之後再做reload data.
+
+
+#### 依userGPS 取得一定區域內的pin
+```Swift
+func fetchCasesNearBy10kilometer() {
+        
+        caseNearBy10Kilo.removeAll()
+        let baseLatitude:Double = userLocationValue?.latitude ?? 0 //25.084845
+        let baseLongitude:Double =  userLocationValue?.longitude ?? 0 //121.567158
+        let rangeNearBy:Double = 0.009 * ragneKilo //一公里等於0.009經緯度
+        let index = items?.count ?? 0
+        
+        for a in 0...(index - 1) {
+            guard let safeItem = items?[a] else {return}
+            
+            if safeItem.latitude < baseLatitude + rangeNearBy && safeItem.latitude > baseLatitude - rangeNearBy && safeItem.longitude < baseLongitude + rangeNearBy && safeItem.longitude > baseLongitude - rangeNearBy {
+                print(safeItem.caseName ?? "" )
+                caseNearBy10Kilo.append(safeItem)
+            }
+        }
+        
+```
