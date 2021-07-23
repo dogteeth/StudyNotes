@@ -10,7 +10,7 @@ cell.selectionStyle = .none
 notes:?
 1. 以closure做一個var, ex.   var toDoSomething : ((UITableViewCell) -> Void)?
 2. button押了的程式，呼叫這個clourse, ex. toDoSomething?(self)
-3. ViewController裹
+3. ViewController裹定義這個var的內容物。 ex. cell.toDoSomething = { cell in //something to do... }
 
 - 在 cell的 ViewController裹，要做closure的設計。
 ```Swift
