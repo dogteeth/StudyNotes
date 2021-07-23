@@ -1,4 +1,4 @@
-壓縮圖片的方式
+#### 壓縮圖片的方式
 
 
 [來源](https://stackoverflow.com/questions/29137488/how-do-i-resize-the-uiimage-to-reduce-upload-image-size/29138120)
@@ -68,6 +68,25 @@ func resizedTo1MB() -> UIImage? {
     }
 
     return resizingImage
-}
+  }
 }
 ```
+#### image loading時，加入動畫
+```Swift
+extension UIImageView {
+    fileprivate var activityIndicator : UIActivityIndicatorView {
+        get {
+            
+            let activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.center = CGPoint(x:self.frame.width/2, y:self.frame.height/2)
+            
+            activityIndicator.stopAnimating()
+            self.addSubview(activityIndicator)
+            return activityIndicator
+        }
+    }
+}
+
+```
+
