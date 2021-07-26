@@ -1,3 +1,29 @@
+#### cache image
+[source link](https://medium.com/flawless-app-stories/reusable-image-cache-in-swift-9b90eb338e8d)
+
+- Using NSCache as a storage
+- image rendering pipeline
+    - loading: loads compressed images into memory.
+    - decoding: converts ecoded image data in per pixel image information.
+    - rendering: copies and scales the image data from the image buffer into the frame buffer.
+- In memory image cache
+
+```Swift
+// Declares in-memory image cache
+protocol ImageCacheType: class {
+    // Returns the image associated with a given url
+    func image(for url: URL) -> UIImage?
+    // Inserts the image of the specified url in the cache
+    func insertImage(_ image: UIImage?, for url: URL)
+    // Removes the image of the specified url in the cache
+    func removeImage(for url: URL)
+    // Removes all images from the cache
+    func removeAllImages()
+    // Accesses the value associated with the given key for reading and writing
+    subscript(_ url: URL) -> UIImage? { get set }
+}
+```
+
 #### 壓縮圖片的方式
 
 
