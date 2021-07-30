@@ -64,3 +64,35 @@ func fetchCasesNearBy10kilometer() {
         }
         
 ```
+
+
+#### 把所有的pin全部秀在mapView上。
+```Swift
+mapView.showAnnotations(annotationArray, animated: true)
+```
+- 實際的例子：
+```Swift
+
+   func refreshMapAnnotations(mapView: MKMapView , items:[Item]?) {
+        
+        mapView.removeAnnotations(mapView.annotations)
+        
+        var annotationArray : [MKAnnotation] = []
+        
+        guard let safeItems = items else {return}
+        for eachItem in safeItems {
+            let newAnnotation = CaseAnnotation(
+                title: eachItem.caseName,
+                item: eachItem,
+                coordinate:
+                    CLLocationCoordinate2D(
+                        latitude: eachItem.latitude,
+                        longitude: eachItem.longitude)
+            )
+            annotationArray.append(newAnnotation as MKAnnotation)
+            mapView.addAnnotation(newAnnotation)
+        }
+        mapView.showAnnotations(annotationArray, animated: true)
+
+    }
+```
