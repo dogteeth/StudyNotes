@@ -97,7 +97,6 @@ mapView.showAnnotations(annotationArray, animated: true)
                         longitude: eachItem.longitude)
             )
             annotationArray.append(newAnnotation as MKAnnotation)
-            mapView.addAnnotation(newAnnotation)
         }
         mapView.showAnnotations(annotationArray, animated: true)
 
