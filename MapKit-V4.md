@@ -67,6 +67,13 @@ func fetchCasesNearBy10kilometer() {
 
 
 #### 把所有的pin全部秀在mapView上。
+
+```Swift
+func showAnnotations(_ annotations: [MKAnnotation],  animated: Bool)
+```
+- annotations：The annotations that you want to be visible in the map.
+- animated： true if you want the map region change to be animated, or false if you want the map to display the new region immediately without animations.
+
 ```Swift
 mapView.showAnnotations(annotationArray, animated: true)
 ```
