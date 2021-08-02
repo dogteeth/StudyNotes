@@ -115,25 +115,6 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
 ```
 
 #### 押了cell 改變背景
-```Swift
- override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? TableCell02 {
-            cell.isExpanded = !cell.isExpanded
-            if cell.isExpanded {
-                UIView.animate(withDuration: 0.3, animations: {
-                    cell.contentView.backgroundColor = UIColor.darkGray
-                })
-            } else {
-                UIView.animate(withDuration: 0.3, animations: {
-                    cell.contentView.backgroundColor = UIColor.lightGray
-                })
-            }
-        }
-        
-    }
-```
-
-#### 押了cell 改變背景，方法2
 - 在 cell的 controller裹
 ```Swift
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -151,4 +132,32 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
            }
         
     }
+```
+
+#### 押了改變cell高度 
+- 宣告變數
+
+```Swift
+let normalHeight:CGFloat = 50
+let expandHeight:CGFloat = 200
+```
+
+- 加入判斷程式，與更新程式 
+```Swift
+
+ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+ }
+
+ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if tableView.indexPathForSelectedRow?.row == indexPath.row {
+            return expandHeight;
+        } else {
+            return normalHeight;
+        }
+ }
+    
 ```
