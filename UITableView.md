@@ -132,3 +132,23 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
         
     }
 ```
+
+#### 押了cell 改變背景，方法2
+- 在 cell的 controller裹
+```Swift
+  override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            UIView.animate(withDuration: 0.8, animations: {
+                self.backgroundColor = .red
+            })
+            isExpanded = !isExpanded
+            changeHeight?(self)
+           } else {
+               self.backgroundColor = .white
+            isExpanded = !isExpanded
+            changeHeight?(self)
+           }
+        
+    }
+```
