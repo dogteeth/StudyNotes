@@ -115,7 +115,7 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
 ```
 
 #### 押了cell 改變背景
-- 在 cell的 controller裹
+- 在 cell的 controller裹做以下的程式
 ```Swift
   override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
