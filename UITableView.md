@@ -161,3 +161,41 @@ let expandHeight:CGFloat = 200
  }
     
 ```
+
+
+#### tap to expand, tap again to close
+```Swift
+ var isExpanded:Bool = false
+ var selectedRow = -1
+ 
+ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedRow == -1 {
+            print("it's the frist")
+            selectedRow = indexPath.row
+            isExpanded = true
+        } else if selectedRow == indexPath.row {
+             print("you tapped the same cell")
+            isExpanded = !isExpanded
+        } else {
+            isExpanded = true
+            print("you changed the cell")
+        }
+        print(indexPath.row)
+        selectedRow = indexPath.row
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+    }
+    
+override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if tableView.indexPathForSelectedRow?.row == indexPath.row && isExpanded {
+            return expandHeight;
+        }
+        
+        return normalHeight;
+        
+    }
+
+```
