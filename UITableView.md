@@ -199,3 +199,34 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
     }
 
 ```
+- 可以簡化成這樣：
+```Swift
+
+  var isExpanded:Bool = false
+  var selectedRow = -1
+ 
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        
+        if selectedRow == indexPath.row {
+            isExpanded = !isExpanded
+        } else {
+            isExpanded = true
+        }
+        selectedRow = indexPath.row
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+    }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if tableView.indexPathForSelectedRow?.row == indexPath.row && isExpanded {
+            return expandHeight;
+        }
+        return normalHeight;  
+    }
+```
