@@ -115,4 +115,25 @@ extension UIImageView {
 }
 
 ```
+#### UIImage 黑白濾鏡
+[資料連結](https://stackoverflow.com/questions/40178846/convert-uiimage-to-grayscale-keeping-image-quality)
+
+![vuqcr](https://user-images.githubusercontent.com/18608853/128105728-5481aada-f179-4661-b8a3-59603bfe0091.png)
+
+- CIFilter(name: "CIPhotoEffectNoir")，CIPhotoEffectNoir 可以換成  CIPhotoEffectTonal, CIPhotoEffectMono
+```Swift
+extension UIImage {
+    var noir: UIImage? {
+        let context = CIContext(options: nil)
+        guard let currentFilter = CIFilter(name: "CIPhotoEffectNoir") else { return nil }
+        currentFilter.setValue(CIImage(image: self), forKey: kCIInputImageKey)
+        if let output = currentFilter.outputImage,
+            let cgImage = context.createCGImage(output, from: output.extent) {
+            return UIImage(cgImage: cgImage, scale: scale, orientation: imageOrientation)
+        }
+        return nil
+    }
+}
+```
+
 
