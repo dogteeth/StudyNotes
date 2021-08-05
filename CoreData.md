@@ -3,6 +3,9 @@
 - Managed Object Mode（託管物件模型）: 類似資料庫的schema
 - Persistent Store Coordinator: NSPersistentStoreCoordinator 的 instance
 - Persistent Store：SQLite
+- CoreData Entity -> 想成是表頭
+- CoreData Attributes -> 表頭裹的每一個欄位
+- CoreData NSManagedObject -> 表頭下的每一列（滿足表頭定義的一行資料），都是一個CoreData Object
 
 ##### 在AppDelegate.swift會多出來的程式
 ```Swift
