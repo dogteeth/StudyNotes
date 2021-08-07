@@ -13,7 +13,8 @@
 #### 動態性取得iphone screen的大小，做為 animation的值
 ```Swift
 override func viewDidAppear(_ animated: Bool) {
-        // get the ipiew height, width here
-}
+        let wid = view.bounds.width
+        let hei = view.bounds.height
+        print("width = \(wid), height = \(hei)")}
 
 ```
