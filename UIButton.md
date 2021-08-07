@@ -42,3 +42,38 @@ class AnimatedButton: UIButton {
         )
     }
 ```
+
+- 做extension再做指派
+```Swift
+class CustomButton:UIButton {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configeBtn()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configeBtn()
+    }
+    
+    func configeBtn() {
+        
+        self.addTarget(self, action: #selector(btnClicked(_:)), for: .touchUpInside)
+        
+    }
+    
+    @objc func btnClicked (_ sender:UIButton) {
+        
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0,10,-10,10,0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        
+        sender.layer.add(animation, forKey: "shake")
+        
+    }
+}
+```
