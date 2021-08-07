@@ -18,3 +18,27 @@ class AnimatedButton: UIButton {
     }
 }
 ```
+
+- IBAction加入動畫程式，展示完後再進行action.
+```Swift
+@IBAction func moutainButtonPressed(_ sender: UIButton) {
+        
+        
+        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        
+        UIView.animate(withDuration: 1,
+                       delay: 0.1,
+                       usingSpringWithDamping: CGFloat(0.20),
+                       initialSpringVelocity: CGFloat(6.0),
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+                       },
+                       completion: { Void in (
+                        self.performSegue(withIdentifier: SegueIdentifier.WalkProToTopicsTVC, sender: self)
+                        
+                       
+                       )}
+        )
+    }
+```
