@@ -70,3 +70,10 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
             redView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
         ])
 ```
+#### UILayoutGuide()
+- A rectangular area that can interact with Auto Layout.
+- Use layout guides to replace the dummy views you may have created to represent inter-view spaces or encapsulation in your user interface. 
+- A dummy view is an empty view that does not have any visual elements of its own and serves only to define a rectangular region in the view hierarchy.
+- For example, if you wanted to use constraints to define the size or location of an empty space between views, you needed to use a dummy view to represent that space. 
+- If you wanted to center a group of objects, you needed a dummy view to contain those objects. Similarly, dummy views could be used to contain and encapsulate part of your user interface.
+- Dummy views let you break up a large, complex user interface into self-contained, modular chunks. When used properly, they could greatly simplify your Auto Layout constraint logic.
