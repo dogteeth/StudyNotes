@@ -57,5 +57,8 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
   - A dynamicllay calculated area that tries to preserve content for reading based on orientation and font size.
 
 
+#### safeAreaGuide, layoutMarginsGuide
+- safeAreaGuide, 上下空白
+- layoutMarginGuide, 下左右都空白
 
 
