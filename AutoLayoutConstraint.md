@@ -62,3 +62,11 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
 - layoutMarginGuide, 下左右都空白
 
 
+```Swift
+        NSLayoutConstraint.activate([
+            redView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            redView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            redView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            redView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
+        ])
+```
