@@ -33,6 +33,7 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
   ).isActive = true
 
 ```
+
 - translatesAutoresizingMaskIntoConstraints : Note that the autoresizing mask constraints fully specify the view’s size and position; therefore, you cannot add additional constraints to modify this size or position without introducing conflicts. If you want to use Auto Layout to dynamically calculate the size and position of your view, you must set this property to false
 ```Swift
    yourlabel.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +45,16 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
   view.topAnchor
 ```
 
-
+#### UILayoutGuides
+- SafeAreas：以下的地方都不會被掉。
+  - Status bars : 最上面的瀏海
+  - Navigation bars
+  - Tab bars
+  - Tool bars：最下面暗示home screen的一條線
+- LayoutMargins
+  - 上去掉40， 下去掉34 左右各去掉20（預設值）
+- ReadableContent
+  - A dynamicllay calculated area that tries to preserve content for reading based on orientation and font size.
 
 
 
