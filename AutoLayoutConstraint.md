@@ -134,3 +134,37 @@ override var intrinsicContentSize: CGSize {
 
 
 #### Content Hugging Priorities And Content Compression Resistance Priorities
+- Huggin priority comes into action when available content size is more than the total size of the content.(當可取得的大小，比實際的內容大小還要多）。notes: 系統會需要把其中的一個實際內容拉大，才能滿足實際大小。
+- Huggin priority comes into action when available content size is more than the total size of the content.(當可取得的大小，比實際的內容大小還要多）。notes: 系統會需要把其中的一個實際內容拉大，才能滿足實際大小。Content Hugging Priority 較大的那個內容，會Huggin自己，其它的內容就會被expand.
+- Content Compression Resistance Priority comes into action when content requires more size than the available.
+
+#### defalut of CHCR
+- By default when you create a UILabel or a UITextField in code they have a horizontal content hugging priority of 250 (.defaultLow). 
+
+[Easier Swift Layout Priorities](https://useyourloaf.com/blog/easier-swift-layout-priorities/)
+```Swift
+let rawPriority = UILayoutPriority.defaultLow.rawValue
+let labelPriority = UILayoutPriority(rawPriority + 1)
+label.setContentHuggingPriority(labelPriority, for: .horizontal)
+
+```
+####  Operator Overload
+```Swift
+extension UILayoutPriority {
+  static func +(lhs: UILayoutPriority, rhs: Float) -> UILayoutPriority {
+    return UILayoutPriority(lhs.rawValue + rhs)
+  }
+
+  static func -(lhs: UILayoutPriority, rhs: Float) -> UILayoutPriority {
+    return UILayoutPriority(lhs.rawValue - rhs)
+  }
+}
+```
+```Swift
+let labelPriority = UILayoutPriority.defaultLow + 1
+label.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
+view.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
+
+
+```
+
