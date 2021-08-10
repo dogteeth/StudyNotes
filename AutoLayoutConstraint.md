@@ -121,6 +121,7 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
 ```Swift
 override var intrinsicContentSize: CGSize {
   return CGSize(width: 50, height: 20)
+}
 ```
 - content hugging
 - compression resistance
