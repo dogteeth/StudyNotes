@@ -165,6 +165,8 @@ let labelPriority = UILayoutPriority.defaultLow + 1
 label.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
 view.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
 
-
 ```
+
+- setContentHugginPriority,  rawValue = 250
+- setContentCompressionResistancePriority, rawValue = 750
 
