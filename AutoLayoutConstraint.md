@@ -1,3 +1,10 @@
+#### [iPhone UIKit Size](https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Displays/Displays.html)
+- SE: 320*568
+- 6/7/8: 375*667
+- 7/8Plus: 414*736
+- X: 375*667
+
+
 #### 建立Constraint的三種
 - storyboard
 - NSLayoutAnchor
@@ -102,7 +109,18 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
 - When Auto Layout solves these equations, it does not just assign the value of the right side to the left. Instead, it calculates the value for both attribute 1 and attribute 2 that makes the relationship true.
 
 
-#### instrinsic content size
+#### intrinsic content size
 - What is a view’s intrinsic content size?
 - Most views have an intrinsic content size, which refers to the amount of space the view needs for its content to appear in an ideal state. For example, the intrinsic content size of a UILabel will be the size of the text it contains using whatever font you have configured it to use.
 - Intrinsic content sizes are important because they allow views to have a natural width and height without us forcing one. For Auto Layout to work it must know where each view is positioned precisely: its X, Y, width, and height values. With intrinsic content size we can say “place this button 20 points from the top and center it horizontally” and that’s enough to form a complete layout – Auto Layout can calculate the rest based on the button’s intrinsic size.
+- intrinsic content size
+  - UISwitch, UIActivityIndicator, UIButton, UILabel
+  - UIImageView -> The size of the image. No intrinsic size if image not set.
+  - UIView, has NO intrinsic content size.
+- override the intrinsic contetn size
+```Swift
+override var intrinsicContentSize: CGSize {
+  return CGSize(width: 50, height: 20)
+```
+- content hugging
+- compression resistance
