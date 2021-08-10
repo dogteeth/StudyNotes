@@ -1,9 +1,12 @@
 #### [iPhone UIKit Size](https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Displays/Displays.html)
-- SE:       320*568
-- 6/7/8:    375*667
-- 7/8Plus:  414*736
-- X:        375*667
-- iPadPro 12.9: 
+- SE:320*568
+- 6/7/8:375*667
+- X:375*667
+- 7/8Plus:414*736
+- iPad/iPadPro 9.7: 768*1024
+- iPadPro 12.9: 1024*1366
+- iPadPro 10.5: 1112*834
+
 
 
 #### 建立Constraint的三種
