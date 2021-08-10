@@ -77,3 +77,18 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
 - For example, if you wanted to use constraints to define the size or location of an empty space between views, you needed to use a dummy view to represent that space. 
 - If you wanted to center a group of objects, you needed a dummy view to contain those objects. Similarly, dummy views could be used to contain and encapsulate part of your user interface.
 - Dummy views let you break up a large, complex user interface into self-contained, modular chunks. When used properly, they could greatly simplify your Auto Layout constraint logic.
+
+
+
+#### AutoLayout的改變有兩種
+- External Change
+  - The user resizes the window (OS X).
+  - The user enters or leaves Split View on an iPad (iOS).
+  - The device rotates (iOS).
+  - The active call and audio recording bars appear or disappear (iOS).
+  - You want to support different size classes.
+  - You want to support different screen sizes.
+- Internal Change
+  - The content displayed by the app changes.
+  - The app supports internationalization.
+  - The app supports Dynamic Type (iOS).
