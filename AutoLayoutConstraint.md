@@ -123,5 +123,8 @@ override var intrinsicContentSize: CGSize {
   return CGSize(width: 50, height: 20)
 }
 ```
-- content hugging
-- compression resistance
+- content hugging / compression resistance CHCR
+  - content cn shrink and grow
+  -  <=50, content hugging -> how much a control should grow
+  -  >=50, content compress -> how much a control shoud resist in being shrunk
+  -  intrinsicContentSize constraints are optional, we adjust them through CHCR. They can be overriden with anchors.
