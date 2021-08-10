@@ -92,3 +92,11 @@ button1.firstBaselineAnchor.constraint(     //將button1的底線對齊至
   - The content displayed by the app changes.
   - The app supports internationalization.
   - The app supports Dynamic Type (iOS).
+
+
+#### Tha anatomy of a constraint
+![view_formula_2x](https://user-images.githubusercontent.com/18608853/128792076-fbd2cf60-0e61-4d47-8eaa-dcc3c92057ff.png)
+
+- Equality, Not Assignment
+- It’s important to note that the equations shown in Note represent equality, not assignment.
+- When Auto Layout solves these equations, it does not just assign the value of the right side to the left. Instead, it calculates the value for both attribute 1 and attribute 2 that makes the relationship true.
