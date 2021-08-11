@@ -168,6 +168,7 @@ view.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
 ```
 
 #### CHCR的預設值
-- setContentHugginPriority,  rawValue = 250
-- setContentCompressionResistancePriority, rawValue = 750
+- setContentHugginPriority,  預設值rawValue = 250，值越高，抗拉伸的優先權越高。 
+- setContentCompressionResistancePriority, 預設值rawValue = 750， 值越高，拉壓縮的優先權越高
+
 
