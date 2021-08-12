@@ -196,3 +196,18 @@ func makeImageView(named: String) -> UIImageView {
     return view
 }
 ```
+##### StackView
+- StackViews distribution
+  - fill
+  - fill equally
+  - equal spacing
+  - equal centering
+- StackViews alignment
+  - top
+  - button
+  - center
+  - fill
+
+- UIStackView is a container, has no instrinsic content size of its own.
+- Not all distributions work the same.
+- Everything inside needs to be intrinsically content sized.
