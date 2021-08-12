@@ -172,3 +172,27 @@ view.setContentCompressionResistancePriority(.defaultHigh - 1, for: .vertical)
 - setContentCompressionResistancePriority, 預設值rawValue = 750， 值越高，【拉壓縮優先權】越高
 
 
+#### 製作一張可彈性縮放的圖片
+- 四個重點！！
+  - yourImageView.translatesAutoresizingMaskIntoConstraints = false
+  - yourImageView.contentMode = .scaleAspectFit
+  - yourImageView.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)
+  - yourImageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)
+
+```Swift
+//圖片的長寛比例固定，可以依view的大小縮放。
+func makeImageView(named: String) -> UIImageView {
+    let view = UIImageView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.contentMode = .scaleAspectFit
+    view.image = UIImage(named: named)
+
+    // By making the image hug itself a little bit less and less resistant to being compressed
+    // we allow the image to stretch and grow as required
+    // CH, 250, CR, 750, 抗縮放的優先權低於標準值，表示需要縮小或放大，可以先處理它。
+    view.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: .vertical)//抗拉伸的優先權低。若需要拉伸，可以先拉它。
+    view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 749), for: .vertical)//抗壓縮的優先權低。若需要壓縮，可以先壓它。
+
+    return view
+}
+```
