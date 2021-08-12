@@ -3,6 +3,15 @@
 - UIEdgeInset的設定，並不會改變button的大小，只會改變內容位置的定位。
 
 
+#### contentEdgeInsets, 設UIEdgeInsets後的觀察
+- button的intrinsic的長寛，是依內容物決定，剛好把內容物放完。
+- 設了contentEdgeInsets後，內容物外會再多一圈padding. padding會把button撐大。
+- 但如果button有用autolayout constraints宣告大小，如：spotifyButton.heightAnchor.constraint(equalToConstant: buttonHeight)，則button的大小就會依contraints的進行。
+
+```Swift
+button.contentEdgeInsets = UIEdgeInsets(top: 30, left: buttonHeight, bottom: 30, right: buttonHeight)
+```
+
 ##### [來源](https://stackoverflow.com/questions/51150926/custom-uibutton-class-with-animation-swift)
 
 
