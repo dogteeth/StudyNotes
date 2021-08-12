@@ -211,3 +211,27 @@ func makeImageView(named: String) -> UIImageView {
 - UIStackView is a container, has no instrinsic content size of its own.
 - Not all distributions work the same.
 - Everything inside needs to be intrinsically content sized.
+
+
+#### UIStackViews Distribution - Fill
+- Fills all availabe space
+- Default setting
+- Uses intrinsic content size(CHCR)
+- If CHCR the same -  will complain
+
+#### UIStackViews Distribution - Fill Equally
+- Makes all controls the same size
+- Only distribution NOT to use intrinsic content size
+- Remember: intrinsic content size is an recommendation, not a requirement.
+- Fill equally will break the optional intrinsic content size in order to fill equally.
+
+#### UIStackViews Distribution - Fill Proportionally
+- Maintains proportions as layout grows and shrinks.
+
+#### UIStackViews Distribution - Equal Spacing
+- Maintains equal space between each control.
+
+#### UIStackViews Distribution - Equal Centering
+- Spaces equally between center of controls.
+
+
