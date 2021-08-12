@@ -8,6 +8,14 @@
 - 設了contentEdgeInsets後，內容物外會再多一圈padding. padding會把button撐大。
 - 但如果button有用autolayout constraints宣告大小，如：spotifyButton.heightAnchor.constraint(equalToConstant: buttonHeight)，則button的大小就會依contraints的進行。
 
+
+#### UIButton的基本設定
+- button.titleLabel?.minimumScaleFactor = 0.5 // default 0, Button內之文字顯示，最低的字級大小
+- button.titleLabel?.adjustsFontSizeToFitWidth = true // default false, 是否允許Button內的字体自動調整級數做顯示。
+- 
+
+
+
 ```Swift
 button.contentEdgeInsets = UIEdgeInsets(top: 30, left: buttonHeight, bottom: 30, right: buttonHeight)
 ```
