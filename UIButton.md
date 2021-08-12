@@ -1,4 +1,9 @@
-[來源](https://stackoverflow.com/questions/51150926/custom-uibutton-class-with-animation-swift)
+#### [EdgeInset](http://shinancao.cn/2016/12/15/iOS-UIButton-EdgeInsets/)
+- 如果没有给UIButton的宽和高一个固定值，那么UIButon的大小将自动调整为正好放下title和image。
+- UIEdgeInset的設定，並不會改變button的大小，只會改變內容位置的定位。
+
+
+##### [來源](https://stackoverflow.com/questions/51150926/custom-uibutton-class-with-animation-swift)
 
 
 - Below code when you tap on button it will call animate method and perform animation. 
