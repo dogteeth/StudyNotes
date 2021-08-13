@@ -18,3 +18,20 @@ override func viewDidAppear(_ animated: Bool) {
         print("width = \(wid), height = \(hei)")}
 
 ```
+
+#### textField做動畫
+- myView.frame.origin.y -= 50 // 將myView將自身的y軸，減少50
+
+```Swift
+ func closeSearchBar(){
+        
+        UIView.animate(withDuration: 0.5) {
+            self.searchCancelButton.frame.origin.y -= 50
+            self.searchBar.frame.origin.y -= 50
+        } completion: { _ in
+            self.searchBar.isHidden = true
+            self.searchCancelButton.isHidden = true
+        }
+        
+    }
+```
