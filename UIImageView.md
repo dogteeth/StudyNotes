@@ -1,4 +1,4 @@
-#### Definiton
+#### UIImageView Definiton
 
 An UIImageView provides a view-based container for displaying either a single image or for animating a series of images. For animating the images, the UIImageView class provides controls to set the duration and frequency of the animation. You can also start and stop the animation freely.
 
