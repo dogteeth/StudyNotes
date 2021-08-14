@@ -1,3 +1,5 @@
+#### Definiton
+
 An UIImageView provides a view-based container for displaying either a single image or for animating a series of images. For animating the images, the UIImageView class provides controls to set the duration and frequency of the animation. You can also start and stop the animation freely.
 
 New image view objects are configured to disregard user events by default. If you want to handle events in a custom subclass of UIImageView, you must explicitly change the value of the userInteractionEnabled property to YES after initializing the object.
