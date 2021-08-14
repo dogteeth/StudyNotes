@@ -1,3 +1,13 @@
+#### Definition
+A UIImage object is a high-level way to display image data. You can create images from files, from Quartz image objects, or from raw image data you receive. The UIImage class also offers several options for drawing images to the current graphics context using different blend modes and opacity values.
+
+Image objects are immutable, so you cannot change their properties after creation. This means that you generally specify an image’s properties at initialization time or rely on the image’s metadata to provide the property value. In some cases, however, the UIImage class provides convenience methods for obtaining a copy of the image that uses custom values for a property.
+
+Because image objects are immutable, they also do not provide direct access to their underlying image data. However, you can get an NSData object containing either a PNG or JPEG representation of the image data using the UIImagePNGRepresentation and UIImageJPEGRepresentation functions.
+
+The system uses image objects to represent still pictures taken with the camera on supported devices. To take a picture, use the UIImagePickerController class. To save a picture to the Saved Photos album, use the UIImageWriteToSavedPhotosAlbum function.
+
+
 #### cache image
 [source link](https://medium.com/flawless-app-stories/reusable-image-cache-in-swift-9b90eb338e8d)
 
