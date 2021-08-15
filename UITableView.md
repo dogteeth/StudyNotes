@@ -230,3 +230,31 @@ override func tableView(_ tableView: UITableView, heightForRowAt indexPath: Inde
         return normalHeight;  
     }
 ```
+
+#### Reusable Cell repeating problems
+[解法](https://fluffy.es/solve-duplicated-cells/)
+- cell被reuse的時候，原本cell的設定，會跟著到reuse時又再出現。
+- 解決方案是，在每個cell出現時，就先把原始設定再指定一次，然後再加入判斷值，做更動。
+
+
+```Swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: todoCellIdentifier, for: indexPath) as! TodoTableViewCell
+        
+    // reset (hide) the checkmark label
+    cell.checkLabel.isHidden = true
+    
+    // get the Task object in the taskArray (data source)
+    let task = self.taskArray[indexPath.row]
+    
+    // if the task has marked done, show the checkmark label
+    if(task.done){
+      cell.checkLabel.isHidden = false
+    }
+  
+    cell.taskLabel.text = "Task \(indexPath.row)"
+    return cell
+}
+```
+
+
