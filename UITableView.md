@@ -257,4 +257,5 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 
-
+#### TableView Reload
+- 要在viewWillDispear這裹做reoload.(目前的心得）
