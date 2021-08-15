@@ -1,4 +1,7 @@
 #### Extension Sample
+
+- viewDidLoad要加入 delegate = self
+
 ```Swift
 extension ViewController: UISearchBarDelegate {
     
