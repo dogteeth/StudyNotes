@@ -259,3 +259,20 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 #### TableView Reload
 - 要在viewWillDispear這裹做reoload.(目前的心得）
+
+
+#### TableView Scroll時，收起keyboard的做法
+- viewDidLoad 加入 keyboardDismissMode = .onDrag
+```Swift
+
+        tableView.keyboardDismissMode = .onDrag
+
+```
+- scrollViewDidScroll 設定
+```Swift
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !tableView.isDecelerating {
+                   view.endEditing(true)
+               }
+    }
+```
