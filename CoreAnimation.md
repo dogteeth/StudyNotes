@@ -35,3 +35,19 @@ override func viewDidAppear(_ animated: Bool) {
         
     }
 ```
+
+- 改變imageView的alpha值
+
+```Swift
+   func closeNoResutlsAnimated() {
+        UIView.animate(withDuration: 0.1) {
+            self.noResultsStack.alpha = 0
+        } completion: { _ in
+            self.noResultsStack.alpha = 1
+
+            self.noResultsStack.isHidden = true
+            self.cancelButton.isHidden = true
+            self.tableView.isHidden = true
+        }
+    }
+```
