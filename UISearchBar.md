@@ -83,5 +83,20 @@ override func viewDidLoad() {
 }
 ```
 
+#### UISearchBar與TableView的衝突
+- 加入 cancelsTouchesInView = false
+```Swift
 
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapScreen))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+```
+```Swift
+ @objc func tapScreen(_ recognizer: UITapGestureRecognizer) {
+        print("you tapped")
+        if tableView.isHidden {
+            searchBar.text = ""
+        }
+        view.endEditing(true)
+    }
+```
