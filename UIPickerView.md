@@ -44,3 +44,7 @@ func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent co
         return pickerLabel!
     }
 ```
+
+#### UIPickerView上下選項的漸層
+- pickerView的height會決定上下選項漸層的出現範圍。
+- 若要上下選項不要出現，則把height縮小到只出現現有的Picker即可。
