@@ -1,3 +1,8 @@
+#### UICollection Setup
+- 設兩個delegate, UICollectionViewDataSource, UICollectionViewDelegate
+
+
+
 #### 設計UICollectionView
 - 和UITableView一樣的概念
 - 加入三個extension: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
