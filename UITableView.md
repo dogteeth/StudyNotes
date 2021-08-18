@@ -275,4 +275,13 @@ func scrollViewDidScroll(_ scrollView: UIScrollView) {
                    view.endEditing(true)
                }
     }
+    
 ```
+
+
+#### TableView Scroll時，把navigation bar 收起來
+```Swift
+self.navigationController?.hidesBarsOnSwipe = true
+
+```
+
