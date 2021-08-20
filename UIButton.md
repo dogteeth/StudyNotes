@@ -1,3 +1,9 @@
+#### UIButton 更改圖片
+```Swift
+itemsNearByButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+```
+
+
 #### [EdgeInset](http://shinancao.cn/2016/12/15/iOS-UIButton-EdgeInsets/)
 - 如果没有给UIButton的宽和高一个固定值，那么UIButon的大小将自动调整为正好放下title和image。
 - UIEdgeInset的設定，並不會改變button的大小，只會改變內容位置的定位。
