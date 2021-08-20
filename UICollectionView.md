@@ -1,6 +1,9 @@
 #### UICollection Setup
 - 設兩個delegate, UICollectionViewDataSource, UICollectionViewDelegate
 
+- minimumLineSpacingForSectionAt：Asks the delegate for the spacing between successive rows or columns of a section. item cell之間的間隔設定。
+- minimumInteritemSpacingForSectionAt： Asks the delegate for the spacing between successive items in the rows or columns of a section.
+
 
 
 #### 設計UICollectionView
