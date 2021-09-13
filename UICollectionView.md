@@ -1,4 +1,4 @@
-#### UICollection Setup
+#### UICollectionView Setup
 - 設兩個delegate, UICollectionViewDataSource, UICollectionViewDelegate
 
 - minimumLineSpacingForSectionAt：Asks the delegate for the spacing between successive rows or columns of a section. item cell之間的間隔設定。
@@ -180,6 +180,22 @@ private func setupLongGestureRecognizerOnCollection() {
             centerCaseLocation(caseItem: caseNearBy10Kilo[indexPath.row])
             print("Long press at item: \(indexPath.row)")
         }
+    }
+
+```
+
+#### UICollectionView，系統設定cell selected.
+```Swift
+collectionView.selectItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
+```
+- 加入上面的程式
+- 加的地方，選擇放在viewDidAppear, view load完，同時也appear後，帶出這個程式。
+- 若其它內容也需要出現的資料，也一起在view load完後。就會在頁面出現的時候，一起load出來。
+```Swift
+override func viewDidAppear(_ animated: Bool) {
+        collectionView.selectItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, animated: false, scrollPosition: .centeredHorizontally)
+        contentArray = dummyListArrayOne
+        tableView.reloadData()
     }
 
 ```
