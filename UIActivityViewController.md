@@ -1,3 +1,8 @@
+####分享的內容
+- 圖片，文字，連結
+- 不同的平台可接受的內容有差。譬如line無法接受圖片分享
+
+
 #### A view controller that you use to offer standard services from your app.
 
 - 分享連結的BTN
