@@ -25,3 +25,18 @@
 ```
 
 [參考連結](https://jjeremy-xue.medium.com/swift-玩玩-uiactivityviewcontroller-5995bb80ff68)
+三步驟如下：
+- 把image, text, link 打包成一個any陣列。
+- 使用UIActivityViewController的API
+- 做present
+
+```Swift
+@IBAction func shareInfo(_ sender: UIButton) {
+    // activityItems 陣列中放入我們想要使用的元件，這邊我們放入使用者圖片、使用者名稱及個人部落格。
+    // 這邊因為我們確認裡面有值，所以使用驚嘆號強制解包。
+    
+    let activityVC = UIActivityViewController(activityItems: [userImage.image!,userName.text!,userBlog.text!], applicationActivities: nil)
+    // 顯示出我們的 activityVC。
+    self.present(activityVC, animated: true, completion: nil)
+}
+```
