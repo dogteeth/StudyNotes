@@ -23,3 +23,5 @@
         self.present(activityViewController, animated: true, completion: nil)
     }
 ```
+
+[參考連結](https://jjeremy-xue.medium.com/swift-玩玩-uiactivityviewcontroller-5995bb80ff68)
