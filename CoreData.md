@@ -182,3 +182,9 @@ fetchRequest.predicate = NSPredicate(format: "caseId == \(id)")
 ```
 
 
+#### CoreData存入Array String
+
+<img width="967" alt="001" src="https://user-images.githubusercontent.com/18608853/135399202-59707971-d0ca-4022-b7bb-9cc7cf8eda80.png">
+
+- 加入：NSSecureUnarchiveFromData
+- 加入：Array String
