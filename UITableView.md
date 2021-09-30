@@ -3,6 +3,11 @@
 tableView.separatorStyle = .none
 ```
 
+#### Cell的高度
+- 在viewDidLoad加入設定。
+```Swift
+tableView.rowHeight = UITableView.automaticDimension
+```
 
 
 ##### cell押了不要有任何動畫。
@@ -67,6 +72,8 @@ var tapAction : ((UITableViewCell)->Void)?
         }
     }
 ```
+
+
 
 #### [刪除row](https://stackoverflow.com/questions/29886642/hide-uitableview-cell)
 
