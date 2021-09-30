@@ -186,5 +186,4 @@ fetchRequest.predicate = NSPredicate(format: "caseId == \(id)")
 
 <img width="967" alt="001" src="https://user-images.githubusercontent.com/18608853/135399202-59707971-d0ca-4022-b7bb-9cc7cf8eda80.png">
 
-- 加入：NSSecureUnarchiveFromData
-- 加入：Array String
+- 加入：NSSecureUnarchiveFromData : set NSSecureUnarchiveFromData to Value Transformer (it was renamed to just "Transformer"). Otherwise, you may get this runtime warning: 'NSKeyedUnarchiveFromData' should not be used to for un-archiving and will be removed in a future release
