@@ -18,6 +18,17 @@
     }
 ```
 
+#### tableHeaderView 是另外一種HeaderView
+- header有兩種。一種是整個table header的，另外一種是section header
+- table header 沒有現成的function，直接在viewDidLoad或其它的func裹宣告。
+- tableView.tableHeaderView = someView, 用這句來宣告。someView，可以是任何設定好的view。
+
+```Swift
+ let cell = tableView.dequeueReusableCell(withIdentifier: TimeTable1TVC.identifier) as! TimeTable1TVC
+        let header = cell
+        tableView.tableHeaderView = header
+        cell.tabArray = tabs
+```
 
 #### tableView不要有線
 ```Swift
