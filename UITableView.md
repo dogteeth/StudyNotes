@@ -29,6 +29,21 @@
         tableView.tableHeaderView = header
         cell.tabArray = tabs
 ```
+- table header的設計，可以tableView:willDisplayHeaderView這個function裹，做view的相關設計。
+```Swift
+override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) 
+{
+    // Background view is at index 0, content view at index 1
+    if let bgView = view.subviews[0] as? UIView
+    {
+        // do your stuff
+    }
+
+    view.layer.borderColor = UIColor.magentaColor().CGColor
+    view.layer.borderWidth = 1
+}
+
+```
 
 #### tableView不要有線
 ```Swift
