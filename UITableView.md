@@ -1,3 +1,24 @@
+#### tableView設計 header in section
+- tableView:viewForHeaderInSection, 這個return UIView。所以可以直接可以把設計好的cell放進來宣告，做為輸出。cell也是一個UIView
+- tableView的高度，可以用tableView:heightForHeaderInSection
+
+```Swift
+ func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: TimeTable1TVC.identifier) as! TimeTable1TVC
+        
+        cell.tabArray = tabs
+        cell.setNeedsLayout()
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return normalHeight
+        
+    }
+```
+
+
 #### tableView不要有線
 ```Swift
 tableView.separatorStyle = .none
