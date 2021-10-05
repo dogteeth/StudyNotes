@@ -96,7 +96,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 - set to the target cell
 ```Swift
 let indexPath = IndexPath(item: 2, section: 0)
-            self.collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: true)
+self.collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: true)
 ```
 
 
