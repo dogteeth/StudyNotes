@@ -1,3 +1,15 @@
+#### UICollectionViewCell 做自動寛度
+```Swift
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(
+    width: tabsArray[indexPath.row].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 25,
+    height: 32
+    )
+ }
+
+```
+
 #### UICollectionView Setup
 - 設兩個delegate, UICollectionViewDataSource, UICollectionViewDelegate
 
