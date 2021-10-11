@@ -7,7 +7,7 @@
 - 在mainView的地方，像tableView一樣，設extension, 同時設delegate=self，即完成value的passing.
 
 
-####重點
+#### 重點
 - secondView在mainView必需被create分身，同時加入delegate = self (這段好難...)
 
 ```Swift
