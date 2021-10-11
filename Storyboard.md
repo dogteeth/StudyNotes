@@ -1,4 +1,4 @@
-#### 將一個storyboard加到一個畫面裹。
+#### add storyboard to a view 
 ```Swift
 isOpen = !isOpen
         if isOpen == true {
@@ -10,4 +10,24 @@ isOpen = !isOpen
             self.dismiss(animated: true, completion: nil)
 
         }****
+```
+
+
+#### add storyboard to a view 
+
+```Swift
+         
+addChild(sidbarVC)
+setSidebarConstraints()
+sidbarVC.didMove(toParent: self)
+
+```
+#### remove storyboard to a view 
+
+```Swift
+         
+willMove(toParent: nil)
+sidbarVC.view.removeFromSuperview()
+//以下這一句，一旦它被移走，就不可能再出現, unless you initiate the view again.
+removeFromParent()
 ```
