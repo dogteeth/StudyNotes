@@ -18,6 +18,7 @@ isOpen = !isOpen
 ```Swift
          
 addChild(sidbarVC)
+view.addSubview(secondView.view)
 setSidebarConstraints()
 sidbarVC.didMove(toParent: self)
 
