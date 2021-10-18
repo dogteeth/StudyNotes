@@ -29,6 +29,19 @@
         tableView.tableHeaderView = header
         cell.tabArray = tabs
 ```
+
+- 另外一種sample
+```Swift
+//tableView加入 header
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.HeaderImageTVC) as! HeaderImageTVC
+        cell.headerImageView.image = UIImage(named: String(caseId))
+        let header = cell
+        tableView.tableHeaderView = header
+        tableView.tableHeaderView?.frame.size = CGSize(width: view.frame.width, height: 300)
+```
+
+
+
 - table header的設計，可以tableView:willDisplayHeaderView這個function裹，做view的相關設計。
 ```Swift
 override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) 
