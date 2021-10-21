@@ -12,7 +12,7 @@ var test2 = test[0..<n]
 - 用shuffle()
 
 ```Swift
-arrayB = arrayA.shuffle()
+arrayB = arrayA.shuffled()
 ```
 
 
