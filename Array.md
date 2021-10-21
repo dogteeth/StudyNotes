@@ -17,6 +17,7 @@ arrayB = arrayA.shuffle()
 
 
 #### 把array Int 存進 userDefault
+- 各種存取的[例子](https://stackoverflow.com/questions/25179668/how-to-save-and-read-array-of-array-in-nsuserdefaults-in-swift)
 
 ```Swift
 //save
@@ -28,4 +29,4 @@ arrayB = arrayA.shuffle()
         let array = defaults.array(forKey: "SelectedArray")  as? [Int] ?? [Int]()
 ```
 
-#### 讀取
+
