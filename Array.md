@@ -29,4 +29,16 @@ arrayB = arrayA.shuffled()
         let array = defaults.array(forKey: "SelectedArray")  as? [Int] ?? [Int]()
 ```
 
+#### 取得 Int array裹平均值
+- use reduce()
 
+```Swift
+var intArray = [10, 15, 5, 7, 13]
+
+//This line will take your array, intArray in this case, and reduce it starting at index number 0 and adding all the following consecutive numbers.
+
+let sumArray = intArray.reduce(0, +)
+
+let avgArrayValue = sumArray / intArray.count
+
+```
