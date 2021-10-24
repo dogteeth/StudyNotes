@@ -42,3 +42,11 @@ let sumArray = intArray.reduce(0, +)
 let avgArrayValue = sumArray / intArray.count
 
 ```
+
+#### 取得Array的 max/min
+```Swift
+let numbers = [1, 2, 3, 4, 5]
+numbers.min() // equals 1
+numbers.max() // equals 5
+```
+
