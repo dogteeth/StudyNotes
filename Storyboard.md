@@ -1,3 +1,12 @@
+####
+- viewDidLoad: 只會在 App 加載時被呼叫一次
+- viewDidAppear: 在於每次進入畫面時 viewDidAppear 就會被呼叫
+- viewDidLayoutSubviews: 
+        - Apple gave a very good explanation on this by saying that it is called to notify the view controller that its view has just laid out its subviews. In another word, viewDidLayoutSubviews is called every time the view is updated, rotated or changed or it’s bounds change. The keyword here is bounds change.
+        - But know that with viewDidLayoutSubviews, it only take places after all the auto layout or auto resizing calculations on the views have been applied. Meaning the method viewDidLayoutSubviews is called every time the view size changes and the view layout has been recalculated.
+        - Every time you build an app, viewDidLayoutSubviews will take place right after viewDidLoad because remember that viewDidLayoutSubviews take place when the layout calculation is applied. Then, when you rotate your app, viewDidLayoutSubviews will take place again and this only work from portrait to landscape and landscape back to portrait. And not from landscape left to landscape right. 
+
+
 #### add storyboard to a view 
 ```Swift
 isOpen = !isOpen
