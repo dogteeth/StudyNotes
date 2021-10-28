@@ -1,3 +1,14 @@
+#### 把Array內容sorting出來
+```Swift
+
+let intArray = [2005,1997,1999,1987,1966,1254,1524]
+let filterInt = intArray.filter { num in
+    return num < 1001
+}
+print(filterInt)
+//印出數值低於1001的數值
+```
+
 #### 把Array內容排序
 - 使用sorted(), 就會重新排序了。
 ```Swift
