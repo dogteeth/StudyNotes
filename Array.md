@@ -1,3 +1,11 @@
+#### 把Array內容排序
+- 使用sorted(), 就會重新排序了。
+```Swift
+let intArray = [2005,1997,1999,1987,1966,1254,1524]
+let resortedArray = intArray.sorted()
+```
+
+
 #### 把Array裹，取出前面的n個數量
 - 以下的用法，可以把testArray的 index位置裹的，0，1取出來。
 
