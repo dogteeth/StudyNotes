@@ -19,3 +19,9 @@ Since the code hides items from ill-intentioned users, Keychain Services provide
 
 #### Apple 提供的，關於keychain的概念 
 Aside from adding, modifying, deleting or searching for a specific keychain item, Apple also provides functions to both export and import certificates, keys and identities or even modify items’ access control.
+- Adding
+- Modifying
+- Deleting
+- Searching
+- Export
+- Import
