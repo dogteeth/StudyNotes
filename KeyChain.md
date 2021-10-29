@@ -3,5 +3,4 @@
 
 -在 iOS App 上儲存資料時你必須記住一點，UserDefaults 只是設計來儲存小量資料，像是使用者在 App 裡的偏好設定、或是一些完全不敏感的東西。要儲存 App 的敏感資料，我們應該使用 Apple 提供的 Security 服務。
 
-![1*GSrgZbPEHGC_9Cy_lfDTPA](https://user-images.githubusercontent.com/18608853/139405584-6a911f47-bb85-4d38-9139-490ec092e157.png
-
+![1*GSrgZbPEHGC_9Cy_lfDTPA](https://user-images.githubusercontent.com/18608853/139405726-01d25cc9-cb79-4ad3-b3bb-663482123cdf.png)
