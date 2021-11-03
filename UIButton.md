@@ -1,3 +1,9 @@
+#### UIButton 更改文字
+```Swift
+button.setTitle("Button Title", for: .normal)
+
+```
+
 #### UIButton 更改圖片
 ```Swift
 itemsNearByButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
