@@ -24,7 +24,47 @@ extension CustomViewProtocol where Self:UIView {
     
 }
 ```
-- 建立完Protocol後，建立 
+- 建立完Protocol後，建立Cocoa Touch Class的 UIView Class
+
+```Swift
+import UIKit
+
+class UserGuideMode01: UIView, CustomViewProtocol {
+    
+    
+    @IBOutlet var contentView: UIView!
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit(for: "UserGuideMode01")
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit(for: "UserGuideMode01")
+    }
+    
+    //以下是 optional
+    func config(inputSubTitle:String, inputDescription:String) {
+        
+        subtitleLabel.text = inputSubTitle
+        descriptionLabel.text = inputDescription
+    }
+    
+    func addBottomBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
+        let border = UIView()
+        border.backgroundColor = color
+        border.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        border.frame = CGRect(x: 0, y: frame.size.height - borderWidth, width: frame.size.width, height: borderWidth)
+        addSubview(border)
+    }
+}
+```
 
 #### 讓view的上面左右兩角呈㘣形
 [資料來源](https://www.appcoda.com.tw/rounded-corners-uiview/)
