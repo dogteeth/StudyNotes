@@ -1,3 +1,31 @@
+#### 自製 UIView Module
+-  以 protocol的方式來進行
+
+```Swift
+import UIKit
+
+protocol CustomViewProtocol {
+    var contentView: UIView! { get }
+    func commonInit(for customViewName: String)
+}
+
+extension CustomViewProtocol where Self:UIView {
+    
+    func commonInit(for customViewName: String) {
+        Bundle.main.loadNibNamed(customViewName, owner: self, options: nil)
+        
+        addSubview(contentView)
+        contentView.backgroundColor = .clear
+        contentView.frame = bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+
+   
+    
+}
+```
+- 建立完Protocol後，建立 
+
 #### 讓view的上面左右兩角呈㘣形
 [資料來源](https://www.appcoda.com.tw/rounded-corners-uiview/)
 ```Swift
