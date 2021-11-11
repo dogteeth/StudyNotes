@@ -65,6 +65,10 @@ class UserGuideMode01: UIView, CustomViewProtocol {
     }
 }
 ```
+- 建立 xib file
+在PlaceHolders > File Owner加入 Class的名稱，即可以把兩個Swift File和 Xib File連在一起。 
+
+<img width="1101" alt="01" src="https://user-images.githubusercontent.com/18608853/141239614-24241a30-ae8c-4d75-ae5f-ecdc1d8147ed.png">
 
 #### 讓view的上面左右兩角呈㘣形
 [資料來源](https://www.appcoda.com.tw/rounded-corners-uiview/)
@@ -79,6 +83,8 @@ class UserGuideMode01: UIView, CustomViewProtocol {
 
     }
 ```
+
+
 
 #### [Add Shadow to UIView](https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-shadow-to-a-uiview)
 - iOS can dynamically generate shadows for any UIView, and these shadows automatically adjust to fit the shape of the item in question – even following the curves of text inside a UILabel.
