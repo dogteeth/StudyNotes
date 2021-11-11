@@ -50,6 +50,8 @@ func getJSONSize() {
 ```
 
 #### delete file
+- 取得 filelocation, 用 Bundle.main.url
+- removeItem(at:  _ ) 刪除檔案
 
 ```Swift
 
