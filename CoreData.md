@@ -192,3 +192,23 @@ fetchRequest.predicate = NSPredicate(format: "caseId == \(id)")
 
 - another reference [link](https://www.lexicon.com.au/blog/how-to-save-an-array-of-custom-data-types-in-core-data-with-transformable-and-nssecurecoding-in-ios)
 
+
+
+#### CoreData Warning
+- Multiple NSEntityDescriptions Claim NSManagedObject Subclass
+- the solution:  [link](https://github.com/drewmccormack/ensembles/issues/275)
+```Swift
+
+import CoreData
+public extension NSManagedObject {
+
+    convenience init(context: NSManagedObjectContext) {
+        let name = String(describing: type(of: self))
+        let entity = NSEntityDescription.entity(forEntityName: name, in: context)!
+        self.init(entity: entity, insertInto: context)
+    }
+
+}
+
+
+```
