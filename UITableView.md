@@ -1,3 +1,13 @@
+#### tableView 選取多個 cell
+```Swift
+
+  func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+     return nil
+     
+     }
+
+```
+
 #### tableView 自動選取 cell 
 ```Swift
 let path = IndexPath(row: atRow, section: 0)
