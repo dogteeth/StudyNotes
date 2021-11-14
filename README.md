@@ -29,3 +29,7 @@ Xcode Tips
 as! and as?
 
 ##### [MD檔案製作-Markdown](https://guides.github.com/features/mastering-markdown/)
+
+
+#### 不會！
+-  Non-Standard Data Type  saving in CoreData
