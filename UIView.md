@@ -125,3 +125,28 @@ func addRightBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
     addSubview(border)
 }
 ```
+
+#### UIView Add Blur Effect
+
+- Add View
+```Swift
+
+var darkBlur:UIBlurEffect = UIBlurEffect()
+darkBlur = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterialLight) //extraLight, light, dark
+
+let blurView = UIVisualEffectView(effect: darkBlur)
+blurView.frame = self.view.frame //your view that have any objects
+blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+self.yourWantToAddView.addSubview(blurView)
+
+```
+
+- Remove view
+```Swift
+ for subview in yourWantToAddView.subviews {
+     if subview is UIVisualEffectView {
+     subview.removeFromSuperview()
+     }
+ }
+```
