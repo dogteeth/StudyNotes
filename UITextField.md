@@ -61,3 +61,7 @@ func autoDissmissKeyboard() {
 - use the height to adjust UIScrollView contentInset.
 - handle the size of scroll indicator use the property called "UIScorllView scrollIndicatorInsets"
 - when keyboard will disappear, reset "UIScrollView contentInset, scrollIndicatorInsets" and stop listening.
+
+
+#### Best Solution
+[source](https://www.youtube.com/watch?v=D3sxanj3vd8)
