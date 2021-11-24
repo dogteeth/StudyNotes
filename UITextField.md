@@ -50,3 +50,14 @@ func autoDissmissKeyboard() {
       view.endEditing(true)
     }
 ```
+
+#### UITextField And Keyboard show & hide
+[source](https://www.youtube.com/watch?v=kD6vw0hp5WU&t=682)
+- textField放進scrollView
+- 當keyboard出現時，調整 UIScrollView contentInset到keyboard的上方。
+- listen two event, 1. keyboard will show, 2. keyboard will hide
+- start listening when viewWillAppear, and stop listening when viewWillDisappear
+- use "keyboard will show", to get the height of the keyboard
+- use the height to adjust UIScrollView contentInset.
+- handle the size of scroll indicator use the property called "UIScorllView scrollIndicatorInsets"
+- when keyboard will disappear, reset "UIScrollView contentInset, scrollIndicatorInsets" and stop listening.
