@@ -150,3 +150,13 @@ self.yourWantToAddView.addSubview(blurView)
      }
  }
 ```
+
+#### 加入陰影
+```Swift
+let yourView = UIView()
+yourView.layer.shadowColor = UIColor.black.cgColor
+yourView.layer.shadowOpacity = 1
+yourView.layer.shadowOffset = .zero
+yourView.layer.shadowRadius = 10
+```
+
