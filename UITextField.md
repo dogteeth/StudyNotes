@@ -16,6 +16,7 @@ func textFieldDidChangeSelection(_ textField: UITextField) {
         yourOwnFunctionHere()
  }
 ```
+- 判斷keyboard的高度,輸入表格進行scroll
 
 
 
