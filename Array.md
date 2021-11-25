@@ -1,3 +1,8 @@
+#### 清掉所有Array
+```Swift
+array.removeAll()
+```
+
 #### 取得最
 ```Swift
 let intArray = [2005,1997,1999,1987,1999, 1966,1254,1524]
