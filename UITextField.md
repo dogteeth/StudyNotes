@@ -65,3 +65,4 @@ func autoDissmissKeyboard() {
 
 #### Best Solution
 [source](https://www.youtube.com/watch?v=D3sxanj3vd8)
+[source2](https://stackoverflow.com/questions/29903893/swift-get-keyboard-input-as-the-user-is-typing)
