@@ -1,3 +1,42 @@
+##### tableView drag and drop
+- set  tableView.dragInteractionEnabled = true
+- set  tableView.dragDelegate = self
+- implement two functions:
+  - 1.tableView(_:moveRowAt:to:)
+  - 2.tableView(_:itemsForBeginning:at:) 
+```Swift
+
+//UITableViewDataSource
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard sourceIndexPath != destinationIndexPath else {
+            return
+        }
+        
+        let item = dummyNameArray[sourceIndexPath.row]
+        
+        if sourceIndexPath.row < destinationIndexPath.row {
+            dummyNameArray.insert(item, at: destinationIndexPath.row + 1)
+            dummyNameArray.remove(at: sourceIndexPath.row)
+        } else {
+            dummyNameArray.remove(at: sourceIndexPath.row)
+            dummyNameArray.insert(item, at: destinationIndexPath.row)
+        }
+        
+        //print the result
+        dummyNameArray.forEach {
+            print($0)
+        }
+        print()
+    }
+
+//UITableViewDragDelegate
+     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return [UIDragItem(itemProvider: NSItemProvider())]
+    }
+```
+
+
+
 #### tableView 選取多個 cell
 ```Swift
 
