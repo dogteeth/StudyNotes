@@ -42,11 +42,14 @@ extension ViewController: UITextFieldDelegate {
 ##### 點擊其它地方收起keyboard
 
 ```Swift
+// function One
 func autoDissmissKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
          view.addGestureRecognizer(tap)
     }
-    @objc func dismissKeyboard() {
+
+// function Two
+@objc func dismissKeyboard() {
       view.endEditing(true)
     }
 ```
@@ -66,3 +69,25 @@ func autoDissmissKeyboard() {
 #### Best Solution
 [source](https://www.youtube.com/watch?v=D3sxanj3vd8)
 [source2](https://stackoverflow.com/questions/29903893/swift-get-keyboard-input-as-the-user-is-typing)
+
+```Swift
+    //MARK: - keyboard and textField
+    
+    func addNotificationForKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillChange(_ notification: Notification){
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardEndFrame = self.convert(keyboardScreenEndFrame, from: self)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardEndFrame.height, right: 0)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification){
+        scrollView.contentInset = UIEdgeInsets.zero
+    }
+
+```
