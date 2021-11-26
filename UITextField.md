@@ -91,3 +91,27 @@ func autoDissmissKeyboard() {
     }
 
 ```
+
+#### Other Version
+```Swift
+ 
+    func configNotificationForKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
+       
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+    }
+    
+    @objc func keyboardWillChange(_ notification: Notification){
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardEndFrame = view.convert(keyboardScreenEndFrame, from: self.view)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardEndFrame.height, right: 0)
+   
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification){
+        scrollView.contentInset = UIEdgeInsets.zero
+    }
+    
+```
