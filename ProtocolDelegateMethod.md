@@ -1,3 +1,16 @@
+#### Protocol Delegate Implement
+[source](https://stackoverflow.com/questions/24099230/delegates-in-swift/33549729)
+
+- Step 1: Make a protocol in the UIViewController that you will be removing/will be sending the data.
+- Step 2: Declare the delegate in the sending class (i.e. UIViewcontroller)
+- Step 3: Use the delegate in a class method to send the data to the receiving method, which is any method that adopts the protocol.
+- Step 4: Adopt the protocol in the receiving class
+- Step 5: Implement the delegate method
+- Step 6: Set the delegate in the prepareForSegue:
+
+
+
+
 #### Use Protocol to pass values between views
 [video](https://www.youtube.com/watch?v=DBWu6TnhLeY)
 
