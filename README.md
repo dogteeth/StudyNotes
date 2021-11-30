@@ -1,32 +1,10 @@
-notes:
-
-##### [Networking](https://github.com/dogteeth/SwiftNotes/blob/main/networking.md)
-##### [MapKit使用](https://github.com/dogteeth/SwiftNotes/blob/main/MapKit.md)
-##### [製作路線](https://github.com/dogteeth/SwiftNotes/blob/main/makingMapRoute.md)
-##### [Cluster Annotation](https://codereview.stackexchange.com/questions/212628/custom-map-annotations-and-clusters/214565)
-#### [layout](https://github.com/dogteeth/SwiftNotes/blob/main/layout.md)
-#### [CoreData](https://github.com/dogteeth/SwiftNotes/blob/main/CoreData.md)
 
 ### topics to study:
 
+#### [Different ways to pass data between viewcontrollers/views](https://manasaprema04.medium.com/different-ways-to-pass-data-between-viewcontrollers-views-8b7095e9b1bf)
 
-UITableView
-
-UITextField
-
-UIAlertController
-
-UIAlertAction
-
-NSPredicate
 
 NSFetchResultsController
-
-NSFetchRequest
-
-Xcode Tips
-
-as! and as?
 
 ##### [MD檔案製作-Markdown](https://guides.github.com/features/mastering-markdown/)
 
