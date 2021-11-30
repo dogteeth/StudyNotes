@@ -1,3 +1,9 @@
+#### 取得特定的CEll
+
+```swift
+let cell = tableView.cellForRow(at: indexPath)
+```
+
 ##### tableView drag and drop
 - set  tableView.dragInteractionEnabled = true
 - set  tableView.dragDelegate = self
