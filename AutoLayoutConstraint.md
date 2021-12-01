@@ -1,3 +1,7 @@
+#### translatesAutoresizingMaskIntoConstraints
+- 預設值為true，系統會auto resize，依狀況判斷。
+- 要進行手動設定layout constraints時，要將此值改為false，要系統不要auto resize，全部依照code的定義進行。
+
 #### [iPhone UIKit Size](https://developer.apple.com/library/archive/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Displays/Displays.html)
 - SE:320*568
 - 6/7/8/X:375*667
