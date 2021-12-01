@@ -487,4 +487,8 @@ extension AddTableView: UITableViewDelegate, UITableViewDataSource {
 #### reloadData, beginUdate等的差別
 [source](https://jjeremy-xue.medium.com/swift-說說-tableview-reload-updates-110bded53c3c)
 - reloadData 更新數據，刷新tableView（簡單且粗暴），重整整個表格的數據，並無動畫效果。
+- reloadRows, reloadSections
+- beginUpdates, endUpdates
+  - beginUpdates: Begin a series of method calls that insert, delete, or select rows and sections of the receiver.That means, you should not use this unless you are inserting, deleting or selecting. You are doing neither of these.
+- 
 
