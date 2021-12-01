@@ -484,3 +484,6 @@ extension AddTableView: UITableViewDelegate, UITableViewDataSource {
     }
     
 ```
+#### reloadData, beginUdate等的差別
+- reloadData 更新數據，刷新tableView（簡單且粗暴），重整整個表格的數據，並無動畫效果。
+
