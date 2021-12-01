@@ -490,5 +490,47 @@ extension AddTableView: UITableViewDelegate, UITableViewDataSource {
 - reloadRows, reloadSections
 - beginUpdates, endUpdates
   - beginUpdates: Begin a series of method calls that insert, delete, or select rows and sections of the receiver.That means, you should not use this unless you are inserting, deleting or selecting. You are doing neither of these.
-- 
+
+
+#### deselected sample
+- 限制可選的cell
+- 同一個cell 壓一下選取，再壓一下取消選取
+- 超出可選數量的cell, 會主動 deselect
+```Swift
+
+    var selectedIndexPaths = [IndexPath]()
+    var selectLimit = 2
+    var selectedCount = 0
+
+    //UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let index = selectedIndexPaths.firstIndex(of: indexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            selectedIndexPaths.remove(at: index)
+            selectedCount -= 1
+            
+            print("selectedIndexPathCount: \(selectedIndexPaths.count)")
+            
+        } else {
+            if selectedCount == selectLimit {
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                selectedIndexPaths.append(indexPath)
+                selectedCount += 1
+                print("selectedIndexPathCount: \(selectedIndexPaths.count)")
+            }
+        }
+        
+        print("selectedIndexPaths:\(selectedIndexPaths)")
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+
+```
+
 
