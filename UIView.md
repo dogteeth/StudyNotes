@@ -1,3 +1,13 @@
+#### Frame 和 Bounds的差別
+- Frame => 相對於 Super View 的位置和大小。
+- Bounds => 相對於自己的位置和大小，也就是說如果沒有去重設 Bounds 的話，座標永遠都是(0, 0)。
+
+- 加入greenView, 從superView的 x:200, y:200開始，greenView本身的大小為 width 100, height 300
+```Swift
+greenView.frame = CGRect(x:200, y:200, width:100, height:300)
+view.addSubview(grennView)
+```
+
 #### 自製 UIView Module
 -  以 protocol的方式來進行
 
