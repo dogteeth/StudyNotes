@@ -427,3 +427,60 @@ self.navigationController?.hidesBarsOnSwipe = true
 
 ```
 
+#### Setup tableView in a UIView programmatically
+```Swift
+import UIKit
+
+class AddTableView: UIView {
+    
+    
+    var tableView = UITableView()
+    
+    
+    override func draw(_ rect: CGRect) {
+        self.addSubview(tableView)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        setupTableViewConstraints()
+        tableView.backgroundColor = .red
+    }
+    
+    override func layoutSubviews() {
+        //tableView.frame = self.bounds
+    }
+    
+    func setupTableViewConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+}
+
+extension AddTableView: UITableViewDelegate, UITableViewDataSource {
+    
+    //UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("you tap")
+    }
+    
+    //UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell  =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = "good"
+        
+        return cell
+    }
+    
+```
