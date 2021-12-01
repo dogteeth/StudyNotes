@@ -1,3 +1,7 @@
+#### datasource 和 delegate的差別
+- delegate: 用來控制 UI event,像是選擇 table cell 後該做什麼動作.
+- datasource: 顯示 table cell 內的資料(datasource).
+
 #### 取得特定的CEll
 
 ```swift
