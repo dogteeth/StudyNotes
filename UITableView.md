@@ -2,7 +2,7 @@
 - delegate: 用來控制 UI event,像是選擇 table cell 後該做什麼動作.
 - datasource: 顯示 table cell 內的資料(datasource).
 
-#### 取得特定的CEll
+#### 取得特定的cell
 
 ```swift
 let cell = tableView.cellForRow(at: indexPath)
