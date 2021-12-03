@@ -1,3 +1,42 @@
+#### 有限制的多cell點選
+```Swift
+ var playersLimits = 2
+ var selectedIndexPaths = [IndexPath]()
+ var selectedCount = 0
+    
+ //UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("you tapped")
+        
+        if let index = selectedIndexPaths.firstIndex(of: indexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            selectedIndexPaths.remove(at: index)
+            selectedCount -= 1
+            
+            print("selectedIndexPathCount: \(selectedIndexPaths.count)")
+            
+        } else {
+            if selectedCount == playersLimits {
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                selectedIndexPaths.append(indexPath)
+                selectedCount += 1
+                print("selectedIndexPathCount: \(selectedIndexPaths.count)")
+            }
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+    
+
+
+```
+
+
+
 #### datasource 和 delegate的差別
 - delegate: 用來控制 UI event,像是選擇 table cell 後該做什麼動作.
 - datasource: 顯示 table cell 內的資料(datasource).
