@@ -1,1 +1,18 @@
+#### Example
+```Swift
+   func setupButton(){
+        buttonOne = UIButton(configuration: configurationButton(title: "confirm"), primaryAction: nil)
+        self.addSubview(buttonOne)
+        buttonTwo = UIButton(configuration: configurationButton(title: "cancel"), primaryAction: nil)
+        self.addSubview(buttonTwo)
 
+    }
+    
+    func configurationButton(title:String) -> UIButton.Configuration {
+        var config: UIButton.Configuration = .filled()
+        config.cornerStyle = .capsule
+        config.buttonSize = .medium
+        config.title = title
+        return config
+    }
+```
