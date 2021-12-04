@@ -1,3 +1,14 @@
+#### 檢查textField是否為空值
+```Swift
+    func checkTextFieldIsNotNil(textFieldInput: UITextField ) -> Bool {
+        if let text = textFieldInput.text, !text.trimmingCharacters(in:   CharacterSet.whitespacesAndNewlines).isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+```
+
 #### 需要有的功能
 - 點擊輸入框，出現keyboard：好像是預設值？？
 - 押了鍵盤的enter, 收起鍵盤：需要extension UITextFieldDelegate，設 delegate = self，製作 func textFieldShouldReturn
