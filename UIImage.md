@@ -1,3 +1,33 @@
+#### 手動加入ImageView
+```Swift
+   let noResultsImage: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "noResutls2"))
+        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    
+        func noResultsSetup() {
+        
+        view.addSubview(noResultsImage)
+        view.addSubview(noResultsLabel)
+        NSLayoutConstraint.activate([
+            noResultsImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultsImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            noResultsImage.widthAnchor.constraint(equalToConstant: 250),
+            noResultsImage.heightAnchor.constraint(equalToConstant: 150),
+            noResultsLabel.topAnchor.constraint(equalTo: noResultsImage.bottomAnchor, constant: 10),
+            noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        noResultsImage.isHidden = true
+        noResultsLabel.isHidden = true
+    }
+```
+
 #### Definition
 A UIImage object is a high-level way to display image data. You can create images from files, from Quartz image objects, or from raw image data you receive. The UIImage class also offers several options for drawing images to the current graphics context using different blend modes and opacity values.
 
