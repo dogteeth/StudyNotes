@@ -1,1 +1,20 @@
+#### ternary operator
+- value = condidtion ? valueTrue : valueFalse
 
+- original
+```Swift
+if item.done == true {
+  cell.accessoryType = .checkmark
+} else {
+  cell.accessoryType = .none
+}
+```
+- sample one
+```Swift
+cell.accessoryType = item.done == true ? .checkmark : .none
+```
+
+- sample two
+```Swift
+cell.accessoryType = item.done ? .checkmark : .none
+```
