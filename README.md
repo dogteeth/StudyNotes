@@ -6,6 +6,26 @@
 
 NSFetchResultsController
 
+Notifications
+HealthKit
+HomeKit
+SiriKit
+SpriteKit & 2D Games
+SceneKit & 3D Games
+In-App Ads
+Scroll View
+Collection View
+Programmatic Layouts
+UI and Unit Testing
+Concurrency / Multithreading
+Bluetooth
+Creating Cocoapod Libraries
+Alternative Design Patterns e.g. MVVM VIPER
+UI Animations
+Maps
+Debugging Tools
+
+
 ##### [MD檔案製作-Markdown](https://guides.github.com/features/mastering-markdown/)
 
 
