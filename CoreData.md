@@ -212,3 +212,21 @@ public extension NSManagedObject {
 
 
 ```
+#### CoreData snippet
+- delete object
+    - call out the context
+    - use .delete function, with object you want to delete
+(超簡單...)
+
+```Swift
+   func deletePlayer(deletePlayer: Player) {
+        let context = persistentContainer.viewContext
+        do {
+            context.delete(deletePlayer)            
+            try context.save()
+            
+        } catch {
+            print("deletePlayer :error")
+        }
+    }
+```
