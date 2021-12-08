@@ -1,4 +1,4 @@
-##### 一些知識
+##### 知識
 - Managed Object Context（託管物件內容）: 一個暫存記憶体，裹面放著許多物件。負責管理被建立的物件，並使用core data的框架回傳。NSManagedObjectContext 的 instance。
 - Managed Object Mode（託管物件模型）: 類似資料庫的schema
 - Persistent Store Coordinator: NSPersistentStoreCoordinator 的 instance
@@ -6,6 +6,11 @@
 - CoreData Entity -> 想成是表頭
 - CoreData Attributes -> 表頭裹的每一個欄位
 - CoreData NSManagedObject -> 表頭下的每一列（滿足表頭定義的一行資料），都是一個CoreData Object
+
+#### 知識
+[good read](https://iosdose.com/swift-core-data/)
+- “It’s focus is on objects rather than the traditional table-driven relational database approach. When storing data, you are actually storing an object’s contents, where an object is represented by an Objective-C/Swift class that inherits the NSManagedObject class. A typical application will have several objects used together, forming an object graph.”
+
 
 ##### 在AppDelegate.swift會多出來的程式
 ```Swift
