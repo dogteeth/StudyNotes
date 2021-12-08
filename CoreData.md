@@ -180,6 +180,11 @@ fetchRequest.predicate = NSPredicate(format: "caseName == %@", caseName)
 //Int
 fetchRequest.predicate = NSPredicate(format: "caseId == \(id)")
 ```
+```Swift
+// %@為結尾，再加入
+var str3 = "dd"
+var pre3 = NSPredicate(format: "SELF CONTAINS[cd] %@", str3)
+```
 
 
 #### CoreData存入Array String
