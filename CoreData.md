@@ -212,9 +212,10 @@ public extension NSManagedObject {
 
 
 ```
-#### CoreData snippet
+#### CoreData CRUD
+- create, read, update, delete
 - delete object
-    - call out the context
+    - get the context
     - use .delete function, with object you want to delete
 (超簡單...)
 
@@ -229,4 +230,39 @@ public extension NSManagedObject {
             print("deletePlayer :error")
         }
     }
+```
+- read all data
+    - get the context
+    - set NSFetchRequest
+    - set NSSortDescriptor
+    - combine NSSortDescriptor with NSFetchRequest
+    - use .fetch to fetch data
+```Swift
+
+
+func getAllPlayers() -> [Player]? {
+        // get the context
+        let context = persistentContainer.viewContext
+        // set NSFetchRequest
+        let fetchRequest = NSFetchRequest<Player>(entityName: "Player")
+        
+        // set NSSortDescriptor
+        let sortDescriptor = NSSortDescriptor(key: "playerName", ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        //combine NSSortDescriptor with NSFetchRequest
+        fetchRequest.sortDescriptors = sortDescriptors
+       
+        do {
+            //use .fetch to fetch data
+            let playerFetched = try context.fetch(fetchRequest)
+            return playerFetched
+            
+        } catch {
+            print(error)
+        }
+        return nil
+        
+    }
+
 ```
