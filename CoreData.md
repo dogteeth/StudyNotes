@@ -276,3 +276,7 @@ func getAllPlayers() -> [Player]? {
     }
 
 ```
+
+#### Relations
+- set up entity relations: parents, children
+- get the specific parent's children enities.
