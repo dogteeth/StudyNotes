@@ -11,4 +11,5 @@
 - git log: see the log, press q to quit
 - git diff fileName.xxx: check what is changed in file, and use q to quit.
 - git checkout fileName.xxx: roll back this file to the previous version.
+- rm -rf .git: remove the git repo in this directory.
 
