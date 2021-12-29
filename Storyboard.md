@@ -1,3 +1,9 @@
+#### No Storyboard Setup
+- 1. remove files: delete SceneDelegate, Main, two files.
+- use shift+command+F, call out general search, search for "main"
+- 2. update info.plist: 1.) delete INFOPLIST_KEY_UIMainStroyboardFile = Main, 2) go to Info.plist Bankery Main -> Application Scene Mainfest, delete this thread.
+- 3. udpate AppDelegate: Delete anything in AppDelegate.
+
 ####
 - viewDidLoad: 只會在 App 加載時被呼叫一次
 - viewDidAppear: 在於每次進入畫面時 viewDidAppear 就會被呼叫
