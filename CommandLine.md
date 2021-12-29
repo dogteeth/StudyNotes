@@ -1,7 +1,8 @@
 - ls: show all files in  the directory
 - ls -a : show all files(include hidden files) in the directory
 - cd: change directory
-- open fileName.xxx: open the file.
+- open fileName.xxx: open the file with it's application.
+- vi fineName.xxx: modify file content using arrow key "Down", command linto  modify.  1). press O to edit, 2).press Enter to go to next line. 3). type ":wq" to end
 
 #### Git
 - git init: init git functions in this directory
