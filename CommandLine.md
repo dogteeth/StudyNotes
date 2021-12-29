@@ -9,4 +9,6 @@
 - git add fileName.xxx: add fileName to git status
 - git commit -m "message input": commit the update
 - git log: see the log, press q to quit
-- 
+- git diff fileName.xxx: check what is changed in file, and use q to quit.
+- git checkout fileName.xxx: roll back this file to the previous version.
+
