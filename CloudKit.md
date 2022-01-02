@@ -5,3 +5,10 @@
 
 #### Create Relationships
  
+#### CloudKit main elements
+- Objects: CKRecord = NSManagedObject in CoreData
+- Models: Schema = NSManagedObjectMode in CoreData
+- Stores: CKRecordZone / CKDatabase = NSPersistentStore in CoreData
+
+
+#### Create a persistent store.
