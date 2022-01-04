@@ -33,6 +33,25 @@ let stringDate = dataFormatter.string(from: currentDate)
 #### Calendar()
 -  A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
 
+- 取得星期幾？回傳Int, 1＝星期日，
+```Swift
+let currentDate = Date()
+let calender = Calendar(identifier: .gregorian)
+let comps = (calender as NSCalendar?)?.components(NSCalendar.Unit.weekday, from: currentDate)
+print(comps?.weekday ?? 0)
+```
+
+- [calendar component](https://developer.apple.com/documentation/foundation/calendar/component)
+- 回傳今天的year, day, month, weekofYear...
+```Swift
+let currentDate = Date()
+let calender = Calendar(identifier: .gregorian)
+
+let output = calender.component(.weekOfYear, from: currentDate)
+
+print(output)
+```
+
 
 #### 時區
 - 取得現在的時區
