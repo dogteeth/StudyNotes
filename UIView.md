@@ -170,3 +170,13 @@ yourView.layer.shadowOffset = .zero
 yourView.layer.shadowRadius = 10
 ```
 
+
+#### 加入陰影backgroudView
+```Swift
+  private lazy var dimmedBackgroundView: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+    return view
+  }()
+```
