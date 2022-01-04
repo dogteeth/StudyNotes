@@ -71,6 +71,20 @@ let output = calender.dateComponents([.month,.day], from: currentDate)
 print(output)
 ```
 
+- 取得特定月份的天數
+```Swift
+let currentDate = Date()
+let calender = Calendar(identifier: .gregorian)
+
+let output = calender.range(
+    of: .day,
+    in: .month,
+    for: currentDate)?.count
+
+print(output ?? 0)
+
+```
+
 #### 時區
 - 取得現在的時區
 ```Swift
