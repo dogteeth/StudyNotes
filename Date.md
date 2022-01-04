@@ -1,5 +1,17 @@
-##### 以當下時間做為字串：
+#### Date()
+- 此方法會回傳系統當下的時間，UTC。
+- UTC：為世界協調時間的縮寫為UTC，Coordinated Universal Time
+- UTC、GMT（Greenwich Mean Time）兩者的標準可以。
+- ＋00:00為中央標準時間
+```Swift
+let a = Date()
+print(a)
+```
 
+#### DateFormatter()
+- For user-visible representations of dates and times, DateFormatter provides a variety of localized presets and configuration options.
+- 回傳user local date.
+- 方法一
 ```Swift
    //MARK: - making Time Stamp 14-digt-string
 
@@ -10,3 +22,13 @@
         return stringDate
     }
 ```
+- 方法二
+```Swift
+let currentDate = Date()
+let dataFormatter = DateFormatter()
+dataFormatter.locale = Locale(identifier: "zh_Hant_TW")
+dataFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+let stringDate = dataFormatter.string(from: currentDate)
+```
+#### Calendar()
+-  A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
