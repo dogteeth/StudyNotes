@@ -42,7 +42,7 @@ print(comps?.weekday ?? 0)
 ```
 
 - [calendar component](https://developer.apple.com/documentation/foundation/calendar/component)
-- 回傳今天的year, day, month, weekofYear...
+- 回傳今天的一個資料（如：year, day, month, weekofYear...）
 ```Swift
 let currentDate = Date()
 let calender = Calendar(identifier: .gregorian)
@@ -51,7 +51,13 @@ let output = calender.component(.weekOfYear, from: currentDate)
 
 print(output)
 ```
-
+- 回傳今天的一連串資料(放入一串array, 回傳資料）
+```Swift
+let currentDate = Date()
+let calender = Calendar(identifier: .gregorian)
+let output = calender.dateComponents([.month,.day], from: currentDate)
+print(output)
+```
 
 #### 時區
 - 取得現在的時區
