@@ -172,6 +172,8 @@ yourView.layer.shadowRadius = 10
 
 
 #### 加入陰影backgroudView
+- 設定var
+- 在需要出現的地方，view.addSubview
 ```Swift
   private lazy var dimmedBackgroundView: UIView = {
     let view = UIView()
