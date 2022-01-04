@@ -8,9 +8,18 @@
 #### 作業方式
 - 在 Project > Info > Localization，加入要支援的語系（如德文，日文...)
 - 新增 Strings File, 命名為 "Localizable", 它的檔案全名會是"Localizable.strings".
-- "Localizable.strings" 的 editory裹，將要支援的語文全打勾。打勾的同時，就新增出相對應的file頁面
+- "Localizable.strings" 的 inspector裹，將要支援的語文全打勾。打勾的同時，就新增出相對應的file頁面
 - 在每一個語言的頁面裹加入文字對照表即完成。
 - code: label.text = NSLocalizedString("XXXXX", comment:"")
+
+#### 建立多國語系的App顯示名稱和Info.plist裹的描述
+- App名稱: CFBundleDisplayName: "Bundle display name"
+- 取得GPS值：
+    - NSLocationAlwaysUsageDescription: "Privacy - Location Always Usage Description"
+    - NSLocationUsageDescription: "Privacy - Location Usage Description"
+    - NSLocationWhenInUseUsageDescription: "Privacy - Location When In Use Usage Description"
+- 新增 Strings File, 命名為 "InfoPlist", 它的檔案全名會是"InfoPlist.strings".其它設定都一樣.
+
 
 #### 取得APP現有語言設定
 ```Swift
