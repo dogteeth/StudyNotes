@@ -30,8 +30,20 @@ dataFormatter.locale = Locale(identifier: "zh_Hant_TW")
 dataFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
 let stringDate = dataFormatter.string(from: currentDate)
 ```
-#### Calendar()
+#### [Calendar()](https://developer.apple.com/documentation/foundation/calendar)
 -  A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
+-  Extracting Components
+-  Getting Calendar Information
+-  Scanning Dates
+-  Calculating Dates from Components
+-  Calculating Intervals
+-  Comparing Dates
+-  Comparing Calendars
+-  Getting AM and PM symbols
+-  Getting Weekday Symbols
+-  Getting Month Symbols
+-  Getting Quarter Symbols
+-  Getting Era Symbols
 
 - 取得星期幾？回傳Int, 1＝星期日，
 ```Swift
@@ -42,7 +54,7 @@ print(comps?.weekday ?? 0)
 ```
 
 - [calendar component](https://developer.apple.com/documentation/foundation/calendar/component)
-- 回傳今天的一個資料（如：year, day, month, weekofYear...）
+- Return Date Component. 回傳今天的一個資料（如：year, day, month, weekofYear...）
 ```Swift
 let currentDate = Date()
 let calender = Calendar(identifier: .gregorian)
@@ -51,7 +63,7 @@ let output = calender.component(.weekOfYear, from: currentDate)
 
 print(output)
 ```
-- 回傳今天的一連串資料(放入一串array, 回傳資料）
+- Return Date Components. 回傳今天的一連串資料(放入一串array, 回傳資料）
 ```Swift
 let currentDate = Date()
 let calender = Calendar(identifier: .gregorian)
