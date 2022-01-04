@@ -32,3 +32,20 @@ let stringDate = dataFormatter.string(from: currentDate)
 ```
 #### Calendar()
 -  A definition of the relationships between calendar units (such as eras, years, and weekdays) and absolute points in time, providing features for calculation and comparison of dates.
+
+
+#### 時區
+- 取得現在的時區
+```Swift
+let timeZone = NSTimeZone.local
+print(timeZone)
+```
+```Swift
+let timeZone = TimeZone.current
+print(timeZone)
+```
+-取得所有的時區代號
+```Swift
+let timeZone = TimeZone.knownTimeZoneIdentifiers
+print(timeZone)
+```
