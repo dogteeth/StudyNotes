@@ -8,6 +8,9 @@ let a = Date()
 print(a)
 ```
 
+- Store dates in UTC/GMT whenever you can, only use your local timezone if you’re 100% certain that your app never crosses timezones
+- When representing dates as strings (i.e., for your app’s users), take in account an iPhone’s locale and calendar settings
+
 #### DateFormatter()
 - For user-visible representations of dates and times, DateFormatter provides a variety of localized presets and configuration options.
 - 回傳user local date.
