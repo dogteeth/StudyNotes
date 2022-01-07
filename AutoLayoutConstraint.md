@@ -1,3 +1,22 @@
+#### 設定 Constraints的方式
+- 設定 var constraints
+```Swift
+  var constraints : [NSLayoutConstraint] = []
+```
+- 依照不同的需求，將 constraint setup append 進去。
+```Swift
+    constraints.append(contentsOf: [
+      collectionView.leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
+      collectionView.trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
+      collectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 10),
+      collectionView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5)
+    ])
+```
+- 最後，統一以constraints 來 activate
+```Swift
+    NSLayoutConstraint.activate(constraints)
+```
+
 #### translatesAutoresizingMaskIntoConstraints
 - 預設值為true，系統會auto resize，依狀況判斷。
 - 要進行手動設定layout constraints時，要將此值改為false，要系統不要auto resize，全部依照code的定義進行。
