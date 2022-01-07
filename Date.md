@@ -103,3 +103,7 @@ print(timeZone)
 let timeZone = TimeZone.knownTimeZoneIdentifiers
 print(timeZone)
 ```
+
+- calendar.component(Calendar.Component, from: Date): Returns the value for one component of a date.
+- calendar.date(from: DateComponent): Returns a date created from the specified components.
+- calendar.dateComponents(Set<Calendar.Component>, from date: Date): Returns all the date components of a date, using the calendar time zone.
