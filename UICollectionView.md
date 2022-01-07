@@ -1,5 +1,5 @@
 #### UICollectionViewSetup
-- Choice One - Using StoryBoard
+- Choice One : Using StoryBoard
     - drag collectionView in StoryBoard, and setup an IBOutlet
     - setup delegate/ datasource delegate, 
     - setup UICollectionViewFlowLayout
@@ -33,6 +33,26 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
 
 }
+```
+- Choice Two : Without Storyboard
+
+```Swift
+  //MARK: - CollectionView
+  private lazy var collectionView: UICollectionView = {
+    
+    let layout = UICollectionViewFlowLayout()
+    layout.minimumLineSpacing = 0
+    layout.minimumInteritemSpacing = 0
+    
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    
+    collectionView.isScrollEnabled = false
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    
+    return collectionView
+    
+  }()
+
 ```
 
 
