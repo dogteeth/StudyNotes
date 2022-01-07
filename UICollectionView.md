@@ -1,3 +1,41 @@
+#### UICollectionViewSetup
+- Choice One - Using StoryBoard
+    - drag collectionView in StoryBoard, and setup an IBOutlet
+    - setup delegate/ datasource delegate, 
+    - setup UICollectionViewFlowLayout
+
+```Swift
+
+  func setCellsView() {
+        let width = (collectionView.frame.size.width - 2) / 8
+        let height = (collectionView.frame.size.width - 2) / 8
+
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.itemSize = CGSize(width: width, height: height)
+    }
+
+```
+```SWift
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+   
+    
+    //UICollectionViewDataSource
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        totalSquares.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
+        
+        cell.dayOfMonth.text = totalSquares[indexPath.item]
+        return cell
+    }
+    
+
+}
+```
+
+
 #### UICollectionViewCell 做自動寛度
 ```Swift
 
