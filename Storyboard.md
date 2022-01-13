@@ -9,7 +9,7 @@
         - <img width="1117" alt="deleteMain3" src="https://user-images.githubusercontent.com/18608853/149270590-ba448633-7660-4c6b-aaff-99a3de8efd94.png">
 
 
-####
+#### Notes:
 - viewDidLoad: 只會在 App 加載時被呼叫一次
 - viewDidAppear: 在於每次進入畫面時 viewDidAppear 就會被呼叫
 - viewDidLayoutSubviews: 
