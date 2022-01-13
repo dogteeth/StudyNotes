@@ -4,10 +4,8 @@
 - 2. update info.plist: 
         - 1.) delete INFOPLIST_KEY_UIMainStroyboardFile = Main, 
         -  <img width="1139" alt="deleteMain" src="https://user-images.githubusercontent.com/18608853/149269883-8c43bba3-c906-4f91-9491-1efac5c5704c.png">
-
-        
-        
-        - 2) go to Info.plist Bankery Main -> Application Scene Mainfest, delete this thread.
+        -  2) go to Info.plist Bankery Main -> Application Scene Mainfest, delete this thread.
+        -  <img width="1137" alt="deleteMain2" src="https://user-images.githubusercontent.com/18608853/149270145-de560896-0ba4-415e-afc6-7f2815cf6e22.png">
 - 3. udpate AppDelegate: Delete anything in AppDelegate.
 
 ####
