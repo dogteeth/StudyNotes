@@ -7,7 +7,22 @@
         -  <img width="1137" alt="deleteMain2" src="https://user-images.githubusercontent.com/18608853/149270145-de560896-0ba4-415e-afc6-7f2815cf6e22.png">
 - 3. udpate AppDelegate: Delete anything in AppDelegate.
         - <img width="1117" alt="deleteMain3" src="https://user-images.githubusercontent.com/18608853/149270590-ba448633-7660-4c6b-aaff-99a3de8efd94.png">
+- 4. Add Code to AppDelegate
+```Swift
+ var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.backgroundColor = .systemBackground
+        window?.rootViewController = ViewController()
+        
+        return true
+        
+    }
 
+```
 
 #### Notes:
 - viewDidLoad: 只會在 App 加載時被呼叫一次
