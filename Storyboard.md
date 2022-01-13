@@ -25,6 +25,7 @@
 ```
 
 #### Notes:
+- "New group without Folder": 不改變file的directory, 只創造虛擬 directory, 易於管理。 
 - viewDidLoad: 只會在 App 加載時被呼叫一次
 - viewDidAppear: 在於每次進入畫面時 viewDidAppear 就會被呼叫
 - viewDidLayoutSubviews: 
