@@ -1,3 +1,7 @@
+#### Defination
+- What is Animation: A change in a value or state over time.
+- Start Value + End Value + Time
+
 #### UIView加入 Shadow
 ```Swift
    func addShadowToView(){
