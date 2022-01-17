@@ -4,9 +4,27 @@
 
 #### To Animate
 
+- animate有四種，以下為其中一種。
 ```Swift
 
-        UIView.animate(withDuration: <#T##TimeInterval#>, delay: <#T##TimeInterval#>, options: <#T##UIView.AnimationOptions#>, animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+UIView.animate(
+        withDuration: 1 / 3 , 
+        delay: 0 , 
+        options: .curveEaseIn , 
+        animations: {
+                self.view.layoutIfNeeded()
+        },
+        completion: 
+        )
+```
+- 重點在 animations: { self.view.layoutIfNeeded()}, 意指：以這個時間內，重新繪制layoutConstraints
+- 在trigger animations的地方，設定新的layoutConstraints, 然後加上 UIView.animate後，在這一句的程式裹，即會出現動畫的效果。若有transform的需要，也可以這裹加上。如：menuButton.transform = .init(rotationAngle: self.menuIsOpen ? .pi / 4 : 0)  -》         把加號的button旋轉，變成X號。
+```Swift
+    UIView.animate(withDuration: 1 / 3, delay: 0, options: .curveEaseIn, animations: {
+            self.menuButton.transform = .init(rotationAngle: self.menuIsOpen ? .pi / 4 : 0)
+            self.view.layoutIfNeeded()
+        })
+
 ```
 
 
