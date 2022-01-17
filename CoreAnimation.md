@@ -2,6 +2,14 @@
 - What is Animation: A change in a value or state over time.
 - Start Value + End Value + Time
 
+#### To Animate
+
+```Swift
+
+        UIView.animate(withDuration: <#T##TimeInterval#>, delay: <#T##TimeInterval#>, options: <#T##UIView.AnimationOptions#>, animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+```
+
+
 #### class CABasicAnimation : CAPropertyAnimation
 - An object that provides basic, single-keyframe animation capabilities for a layer property.
 - keyPath:  [keyPath support](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/Key-ValueCodingExtensions/Key-ValueCodingExtensions.html) 
