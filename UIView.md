@@ -171,6 +171,17 @@ yourView.layer.shadowRadius = 10
 ```
 
 
+#### UIView加入 Shadow
+```Swift
+   func addShadowToView(){
+        secondView.view.layer.shadowColor = UIColor.black.cgColor
+        secondView.view.layer.shadowOpacity = 0.2
+        secondView.view.layer.shadowOffset = .zero
+        secondView.view.layer.shadowRadius = 20
+   }
+```
+
+
 #### 加入陰影backgroudView
 - 設定var
 - 在需要出現的地方，view.addSubview
