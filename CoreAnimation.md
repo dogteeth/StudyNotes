@@ -2,16 +2,6 @@
 - What is Animation: A change in a value or state over time.
 - Start Value + End Value + Time
 
-#### UIView加入 Shadow
-```Swift
-   func addShadowToView(){
-        secondView.view.layer.shadowColor = UIColor.black.cgColor
-        secondView.view.layer.shadowOpacity = 0.2
-        secondView.view.layer.shadowOffset = .zero
-        secondView.view.layer.shadowRadius = 20
-   }
-```
-
 #### class CABasicAnimation : CAPropertyAnimation
 - An object that provides basic, single-keyframe animation capabilities for a layer property.
 - keyPath:  [keyPath support](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/Key-ValueCodingExtensions/Key-ValueCodingExtensions.html) 
