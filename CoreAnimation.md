@@ -1,6 +1,13 @@
 #### Defination
 - What is Animation: A change in a value or state over time.
 - Start Value + End Value + Time
+- Figure out which contraints control the view?
+- "It contains every constraints held by a view": Constraints are held by the closest view, that contains both items in the constraint.
+- Contraints that are held by a view, don't constitute an exhaustive list of constraints that affect a view.
+- Every constraint that affects a view, is listed in the Size Inspector.
+- Constraints that a view holds are listed  on the left in the document outline.
+- A contraint between a sub view and its super view is held by the super view.
+- A constraint by two sub views is held by the super view of both.
 
 #### To Animate
 
@@ -26,6 +33,8 @@ UIView.animate(
         })
 
 ```
+
+
 
 
 #### class CABasicAnimation : CAPropertyAnimation
