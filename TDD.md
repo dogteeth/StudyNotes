@@ -29,3 +29,15 @@
 #### Note
 - XCTest requires all test methods begin with the keyword "test" to be run.
 - sut = system under test.
+
+
+#### Unit Test Anatomy
+- import XCTest : import XCTest
+- import our project into testing target : @testable import UnitTestingExamples
+- Extend XCTestCase : class ViewControllerTests: XCTestCase { ... }
+- Setup run before each test 
+- Start func with the word "test" : func testViewShouldBeLoaded() throws { ... }
+- Assert what you want to test with XCTAssert
+- Give test descriptive name of condition you are trying to test
+
+
