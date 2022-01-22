@@ -24,3 +24,8 @@
 - Refactor: Clean up both your app and test code.
 - Repeat: Do this cycle again until all features are implemented.
 - ![IMG_792058DE8D7B-1](https://user-images.githubusercontent.com/18608853/150534503-287217a8-6026-4f52-8fe2-97fa4550840a.jpeg)
+
+
+#### Note
+- XCTest requires all test methods begin with the keyword "test" to be run.
+- sut = system under test.
