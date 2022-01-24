@@ -14,3 +14,7 @@ outside of the method, press command+option+slash
 
 #### Add breaking point to a line
 command + \(backslash)
+
+
+#### Open a file in a new Panel
+option + click "the file"
