@@ -45,4 +45,7 @@
 - Arrays can contain anything
 - Arrays are of a fixed size
 - Arrays support random access
-- Get/Set methods for array
+- we can Get/Set for an array, that is insert, delete, resize.
+
+##### Array-Insert
+
