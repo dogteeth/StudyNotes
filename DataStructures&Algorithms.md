@@ -41,3 +41,8 @@
 #### Tips
 - Hash Maps / Dictionaries are your freind.
 
+#### Array
+- Arrays can contain anything
+- Arrays are of a fixed size
+- Arrays support random access
+- Get/Set methods for array
