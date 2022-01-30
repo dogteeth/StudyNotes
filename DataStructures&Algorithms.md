@@ -2,13 +2,22 @@
 - For algorithms, scalability refers to how the algorithm performs in terms of execution time and memory usage as the input size increases.
 - When you’re working with a small amount of data, an expensive algorithm may still feel fast. However, as the amount of data increases, an expensive algorithm becomes crippling. 
 
+
 #### Big O(Omicron) notation 
 - Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity.
+- Big O is the language used to compare performance of algorithms (time and space).
+- Most common characteristics are:
+  -  Constant O(1)
+  -  Linear O(n)
+  -  Quadratic O(n^2)
+  -  Logarithmic O(logn)
 - 大O符號（英語：Big O notation），又稱為漸進符號，是用於描述函式漸近行為的數學符號。更確切地說，它是用另一個（通常更簡單的）函式來描述一個函式數量級的漸近上界。
 - 大O符號是由德國數論學家保羅·巴赫曼在其1892年的著作《解析數論》（Analytische Zahlentheorie）首先引入的。而這個記號則是在另一位德國數論學家艾德蒙·朗道的著作中才推廣的，因此它有時又稱為朗道符號（Landau symbols）。代表「order of ...」（……階）的大O，最初是一個大寫希臘字母「Ο」（omicron），現今用的是大寫拉丁字母「O」。
 - Big Omega : Big Omega notation is used to measure the best-case runtime for an algorithm. This isn’t as useful as Big O because getting the best case is often untenable.
 - Big Theta : Big Theta notation is used to measure the runtime for an algorithm that has the same best and worse case.
-- Big O Notation: 1. time(how fast), 2. space(how much memory)
+- Big O Notation: 1. time(how fast), 2. space(how much memory).
+- [Cheat Sheet](https://www.bigocheatsheet.com)
+
 
 #### Time complexity
 - Time complexity is a measure of the time required to run an algorithm as the input size increases.
