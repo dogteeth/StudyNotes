@@ -48,4 +48,7 @@
 - we can Get/Set for an array, that is insert, delete, resize.
 
 ##### Array-Insert
+- 要insert的index, 之後的所有content, copy起來，然後往後移一格。
+- 將insert資料放入index位置。
+
 
