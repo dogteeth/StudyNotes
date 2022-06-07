@@ -1,4 +1,4 @@
-#### filter，判斷條件，arry裹符合條件的值納入新的array後，最後回傳。
+#### filter：判斷條件是否符合，yes的全數回傳。
 - array裹的每一個值都依closure裹的語法判斷Bool值。true，加入回傳Array裹，false則ignore。
 
 ```Swift
