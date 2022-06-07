@@ -3,7 +3,7 @@ https://www.w3resource.com/swift-programming-exercises/array/index.php
 #### Write a Swift program to check if 5 appears as either the first or last element in a given array of integers. The array length should be 1 or more.
 
 - array.first, array.last
-- use [logic operator](https://www.tutorialspoint.com/swift/swift_logical_operators.htm)
+- use [logic operator "or" ](https://www.tutorialspoint.com/swift/swift_logical_operators.htm)
 
 ```Swift
 
