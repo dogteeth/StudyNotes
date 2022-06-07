@@ -80,3 +80,13 @@ numbers.min() // equals 1
 numbers.max() // equals 5
 ```
 
+#### 取得Array裹符合條件的值 filter
+- The filter(isIncluded:) method takes a closure that is executed for every element in the source Array. If you return true from this closure, the element will be included in a new, filtered Array. If you return false, the element is ignored and won't be included in the new Array. 
+
+```Swift
+let arrayOne = [1,2,3,4,5,6,7,8,9]
+
+let arrayEven = arrayOne.filter { $0 % 2 == 0 }
+
+print(arrayEven)
+```
