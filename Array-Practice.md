@@ -33,3 +33,6 @@ print(checkFiveInFirstOrLast(numbers2))
 print(checkFiveInFirstOrLast(numbers3))
 print(checkFiveInFirstOrLast(numbers4))
 ```
+
+#### Write a Swift program to check whether the first element and the last element of a given array of integers are equal. The array length must be 1 or more.
+
